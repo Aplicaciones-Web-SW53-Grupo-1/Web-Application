@@ -19,6 +19,6 @@ export default {
   padding-right: 100px;
 }
 .logo{
-  margin-left: 2rem;
+  margin-left: 2.1rem;
 }
 </style>
