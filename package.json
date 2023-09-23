@@ -1,0 +1,21 @@
+{
+  "name": "docseeker_localapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "i18next": "^23.5.1",
+    "primevue": "^3.34.1",
+    "vue": "^3.3.4",
+    "vue-i18n": "^8.28.2",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
+    "vite": "^4.4.9"
+  }
+}
