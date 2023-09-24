@@ -11,7 +11,7 @@ export default {
       <br>
       <div class="pictures">
         <div class="picture">
-          <router-link to="/register-student" >
+          <router-link to="/login-student" >
             <div class="welcomeImgCard ">
               <img src="../assets/images/estudiante.jpg"
                    alt="student with books" class="images-Welcome">

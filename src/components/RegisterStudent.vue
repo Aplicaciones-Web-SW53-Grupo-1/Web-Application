@@ -129,7 +129,7 @@ export default {
       </div>
 
       <div class="buttonContainer">
-        <router-link to=""> <pv-button @click="register()" label="Register" class="p-button-lg"></pv-button> </router-link>
+        <router-link to="login-student"> <pv-button @click="register()" label="Register" class="p-button-lg"></pv-button> </router-link>
       </div>
 
     </div>
