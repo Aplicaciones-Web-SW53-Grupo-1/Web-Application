@@ -1,0 +1,18 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Jonatan",
+      "lastname": "Curi",
+      "email": "u201912404@gmail.com",
+      "password": "asd",
+      "genre": {
+        "name": "Male",
+        "code": "M"
+      },
+      "birthday": "2023-09-11",
+      "cellphone": "123456789",
+      "image": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png"
+    }
+  ]
+}
