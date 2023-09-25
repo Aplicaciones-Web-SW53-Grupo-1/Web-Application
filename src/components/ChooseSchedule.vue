@@ -93,7 +93,7 @@
   }
 
   .pv-card-col{
-    margin-right: 200px;
+    margin-right: 250px;
   }
 
   .p-button.p-component{
