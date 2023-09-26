@@ -5,7 +5,9 @@ import LoginView from "@/views/LoginView.vue";
 import SelectedTutorView from "./views/SelectetTutorView.vue";
 import chatView from "@/views/chatView.vue";
 import ratingView from "@/views/RatingView.vue";
-
+import ScoreView from "@/views/ScoreView.vue";
+import CalendarView from "@/views/CalendarView.vue";
+import TutorList from "@/views/TutorListView.vue";
 const routes = [
     { path: "/", component: WelcomeView },
     { path: "/register-student", component: RegisterView},
@@ -13,6 +15,9 @@ const routes = [
     { path: "/rating", component:ratingView },
     { path: "/selected", component:SelectedTutorView },
     { path: "/chat", component:chatView },
+    { path: "/calendar", component: CalendarView},
+    { path: "/scoreview", component: ScoreView},
+    { path: "/tutorlist", component: TutorList}
 ];
 
 const router = createRouter({
