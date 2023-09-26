@@ -48,5 +48,14 @@
       "time": "11:00 AM - 1:00 PM",
       "price": "S/15.00"
     }
+  ],
+  "creditCards": [
+    {
+      "id": 1,
+      "owner": "h",
+      "cardNumber": "1",
+      "expirationDate": "1",
+      "cvv": 1
+    }
   ]
 }
