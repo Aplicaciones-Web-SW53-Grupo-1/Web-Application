@@ -8,6 +8,10 @@ import ratingView from "@/views/RatingView.vue";
 import ScoreView from "@/views/ScoreView.vue";
 import CalendarView from "@/views/CalendarView.vue";
 import TutorList from "@/views/TutorListView.vue";
+import UserHomeView from "@/views/UserHomeView.vue";
+import UserEditView from "@/views/UserEditView.vue";
+import UserProfileView from "@/views/UserProfileView.vue";
+
 const routes = [
     { path: "/", component: WelcomeView },
     { path: "/register-student", component: RegisterView},
@@ -17,7 +21,11 @@ const routes = [
     { path: "/chat", component:chatView },
     { path: "/calendar", component: CalendarView},
     { path: "/scoreview", component: ScoreView},
-    { path: "/tutorlist", component: TutorList}
+    { path: "/tutorlist", component: TutorList},
+    { path: "/user-home", component: UserHomeView},
+    { path: "/user-edit", component: UserEditView},
+    { path: "/user-profile", component: UserProfileView}
+
 ];
 
 const router = createRouter({
