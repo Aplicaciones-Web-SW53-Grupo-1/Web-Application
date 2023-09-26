@@ -48,5 +48,76 @@
       "time": "11:00 AM - 1:00 PM",
       "price": "S/15.00"
     }
+  ],
+
+  "tutores": [
+    {
+      "id": 1,
+      "nombre": "Esteban Soler",
+      "photo": "https://cdn.discordapp.com/attachments/1149190528756363337/1155227569097035776/topgun.png",
+      "precio": 15,
+      "puntaje": 4,
+      "especialidad": "Matemáticas"
+
+    },
+    {
+      "id": 2,
+      "nombre": "Kendal Suarez",
+      "photo": "https://cdn.discordapp.com/attachments/1149190528756363337/1155228044252954644/da77990928628b8d692b91ced1432784.png",
+      "precio": 10,
+      "puntaje": 3.5,
+      "especialidad": "Historia"
+    },
+    {
+      "id": 3,
+      "nombre": "Sergio Costa",
+      "photo":"https://cdn.discordapp.com/attachments/1149190528756363337/1155228483002322954/blade-runner.png",
+      "precio": 20,
+      "puntaje": 4.7,
+      "especialidad": "Ciencias"
+    }
+
+  ],
+
+
+  "calificaciones": [
+    {
+      "tipo": "Practica Calificada 1",
+      "fecha": "20-sept-2023",
+      "puntaje": "0/20",
+      "estado": "CALIFICADO"
+    },
+    {
+      "tipo": "Practica Calificada 2",
+      "fecha": "20-oct-2023",
+      "puntaje": "20/20",
+      "estado": "CALIFICADO"
+    },
+    {
+      "tipo": "Cuestionario 1",
+      "fecha": "30-sept-2023",
+      "puntaje": "20/20",
+      "estado": "ENVIADO"
+    },
+    {
+      "tipo": "Cuestionario 2",
+      "fecha": "No completado",
+      "puntaje": "0/20",
+      "estado": "ENVIADO"
+    }
+  ],
+
+  "eventosCalendario": [
+    {
+      "title": "Cita 1",
+      "start": "2023-09-24T19:00:00",
+      "end": "2023-09-24T21:09:00"
+    },
+    {
+      "title": "Cita 2",
+      "start": "2023-09-27T10:00:00",
+      "end": "2023-09-27T12:10:00"
+    }
+
   ]
 }
