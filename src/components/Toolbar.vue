@@ -14,8 +14,8 @@ export default {
 <style scoped>
 .toolBar{
   background-color: #004330;
-  width: 100.1vw;
-  margin: -10px -10px;
+  width: 100%;
+  margin: -10px 0;
   padding-right: 100px;
 }
 .logo{

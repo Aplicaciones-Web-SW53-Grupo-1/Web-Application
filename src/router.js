@@ -8,6 +8,9 @@ import ratingView from "@/views/RatingView.vue";
 import ScoreView from "@/views/ScoreView.vue";
 import CalendarView from "@/views/CalendarView.vue";
 import TutorList from "@/views/TutorListView.vue";
+import ChooseScheduleView from "@/views/ChooseScheduleView.vue";
+
+
 const routes = [
     { path: "/", component: WelcomeView },
     { path: "/register-student", component: RegisterView},
@@ -17,7 +20,8 @@ const routes = [
     { path: "/chat", component:chatView },
     { path: "/calendar", component: CalendarView},
     { path: "/scoreview", component: ScoreView},
-    { path: "/tutorlist", component: TutorList}
+    { path: "/tutorlist", component: TutorList},
+    { path: "/choose-schedule/:id", component: ChooseScheduleView}
 ];
 
 const router = createRouter({
