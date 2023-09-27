@@ -22,11 +22,7 @@ export default {
         for (let i in this.creditCard){
           if (this.creditCard[i].owner === this.owner && this.creditCard[i].cardNumber === this.cardNumber && this.creditCard[i].expirationDate === this.expirationDate && this.creditCard[i].cvv === Number(this.cvv)){
             /*Bank process*/
-            console.info('Successful payment');
-            router.push('/')
-          }
-          else {
-            console.error('Unsuccessful payment');
+            router.push('/selected')
           }
         }
 

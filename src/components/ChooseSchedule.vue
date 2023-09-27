@@ -16,7 +16,7 @@
     },
     methods:{
       payment(){
-        router.push('/')/*Ruth to payment component*/
+        router.push('/payment')/*Ruth to payment component*/
       }
     },
     mounted() {
@@ -30,8 +30,6 @@
             i++;
           }
         }
-        console.log(this.schedulesTutor)
-
       })
     }
   }
