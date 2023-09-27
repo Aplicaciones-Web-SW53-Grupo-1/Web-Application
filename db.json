@@ -1,0 +1,61 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Jonatan",
+      "lastname": "Curi",
+      "email": "u201912404@gmail.com",
+      "password": "asd",
+      "genre": {
+        "name": "Male",
+        "code": "M"
+      },
+      "birthday": "2023-09-11",
+      "cellphone": "123456789",
+      "image": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png"
+    }
+  ],
+  "schedules": [
+    {
+      "id": 1,
+      "idTutor": 1,
+      "TutorName": "Esteban Soler",
+      "days": "Mon-Wed-Fr",
+      "time": "11:00 AM - 1:00 PM",
+      "price": "S/15.00"
+    },
+    {
+      "id": 2,
+      "idTutor": 1,
+      "TutorName": "Esteban Soler",
+      "days": "Tue-Thu-Sat",
+      "time": "11:00 AM - 1:00 PM",
+      "price": "S/15.00"
+    },
+    {
+      "id": 3,
+      "idTutor": 1,
+      "TutorName": "Esteban Soler",
+      "days": "Mon-Tue-Wed",
+      "time": "11:00 AM - 1:00 PM",
+      "price": "S/15.00"
+    },
+    {
+      "id": 4,
+      "idTutor": 2,
+      "TutorName": "Kendall Suarez",
+      "days": "Mon-Tue-Wed",
+      "time": "11:00 AM - 1:00 PM",
+      "price": "S/15.00"
+    }
+  ],
+  "creditCards": [
+    {
+      "id": 1,
+      "owner": "h",
+      "cardNumber": "1",
+      "expirationDate": "1",
+      "cvv": 1
+    }
+  ]
+}

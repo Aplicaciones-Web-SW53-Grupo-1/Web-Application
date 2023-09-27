@@ -5,17 +5,23 @@ import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import Calendar from "primevue/calendar";
 import Card from "primevue/card";
+import Dialog from "primevue/dialog";
 import router from "@/router";
 import { createApp } from 'vue'
 import App from './App.vue'
+import Dropdown from "primevue/dropdown";
+import FileUpload from "primevue/fileupload";
 
 const app = createApp(App);
 app.use(PrimeVue);
 app.use(router);
 
 app.component("pv-button", Button);
+app.component("pv-dialog", Dialog);
+app.component("pv-dropdown", Dropdown);
 app.component("pv-card", Card);
 app.component("pv-input-text", InputText);
 app.component("pv-calendar", Calendar);
+app.component("pv-fileupload", FileUpload);
 
 app.mount("#app");
