@@ -15,6 +15,36 @@
       "image": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png"
     }
   ],
+
+  "tutores": [
+    {
+      "id": 1,
+      "nombre": "Esteban Soler",
+      "photo": "https://cdn.discordapp.com/attachments/1149190528756363337/1155227569097035776/topgun.png",
+      "precio": 15,
+      "puntaje": 4,
+      "especialidad": "Matemáticas"
+
+    },
+    {
+      "id": 2,
+      "nombre": "Kendal Suarez",
+      "photo": "https://cdn.discordapp.com/attachments/1149190528756363337/1155228044252954644/da77990928628b8d692b91ced1432784.png",
+      "precio": 10,
+      "puntaje": 3.5,
+      "especialidad": "Historia"
+    },
+    {
+      "id": 3,
+      "nombre": "Sergio Costa",
+      "photo":"https://cdn.discordapp.com/attachments/1149190528756363337/1155228483002322954/blade-runner.png",
+      "precio": 20,
+      "puntaje": 4.7,
+      "especialidad": "Ciencias"
+    }
+
+  ],
+
   "schedules": [
     {
       "id": 1,

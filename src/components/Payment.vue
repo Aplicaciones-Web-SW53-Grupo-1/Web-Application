@@ -73,7 +73,7 @@ export default {
       <h3></h3>
     </div>
     <div class="sendData">
-      <pv-button label="Confirm" class="confirm-button" @click="confirm"></pv-button>
+      <pv-button label="Confirm" class="confirm-button" @click="confirm()"></pv-button>
     </div>
   </div>
 </template>

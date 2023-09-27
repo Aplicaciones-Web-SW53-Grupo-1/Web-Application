@@ -2,27 +2,14 @@
 
   <div class="body">
 
-    <div class="icons">
-
-      <div class="icon-left">
-        <router-link to="/user-home" class="link"> <i class="pi pi-home"></i> <h3>Home</h3></router-link>
+    <div class="container">
+      <div class="links">
+        <router-link to="/user-home" class="link"><i class="pi pi-home"></i> <h2>Home</h2> </router-link>
+        <router-link to="/tutorlist" class="link"> <i class="pi pi-users"></i> <h2>Tutors</h2></router-link>
+        <router-link to="/user-profile" class="link"> <i class="pi pi-user"></i> <h2>Profile</h2></router-link>
+        <router-link to="/user-edit" class="link"> <i class="pi pi-cog"></i> <h2>Settings</h2></router-link>
       </div>
-
-      <div class="icon-left">
-        <router-link to="" class="link"> <i class="pi pi-home"></i> <h3>Tutors</h3></router-link>
-      </div>
-
-      <div class="icon-left">
-        <router-link to="/user-profile" class="link"> <i class="pi pi-user"></i> <h3>Profile</h3> </router-link>
-      </div>
-
-      <div class="icon-left">
-        <router-link to="/user-edit" class="link"> <i class="pi pi pi-cog"></i> <h3>Settings</h3></router-link>
-      </div>
-
-      <div class="icon-left" id="logout">
-        <router-link to="" class="link"> <i class="pi pi-sign-out"></i> <h3>Logout</h3></router-link>
-      </div>
+      <router-link to="/" class="link"> <i class="pi pi-sign-out"></i> <h3>Log out</h3> </router-link>
     </div>
 
     <div class="profile">
@@ -52,7 +39,7 @@
 
         <div class="component">
 
-          <i class="pi pi-comments" style="font-size: 4rem"></i>
+          <router-link to="/chat" class="cards"><i class="pi pi-comments" style="font-size: 4rem"></i></router-link>
 
           <div class="component-column">
             <label>Chat</label>
@@ -63,7 +50,7 @@
 
         <div class="component">
 
-          <i class="pi pi-book" style="font-size: 4rem"></i>
+          <router-link to="/scoreview" class="cards"><i class="pi pi-book" style="font-size: 4rem"></i></router-link>
 
           <div class="component-column">
             <label>Qualification</label>
@@ -73,7 +60,7 @@
 
         <div class="component">
 
-          <i class="pi pi-user"  style="font-size: 4rem"></i>
+          <router-link to="/user-edit" class="cards"> <i class="pi pi-user-edit"  style="font-size: 4rem"></i></router-link>
 
           <div class="component-column">
             <label>Edit</label>
@@ -85,47 +72,65 @@
 
     </div>
 
-
-
   </div>
 
 
 </template>
 
 <style scoped>
-
+.cards{
+  color:black;
+}
 .body
 {
   display: flex;
 }
 
-.icons {
+.container {
+  display: flex;
+  flex-direction: column;
   background-color: #709A8E;
-  margin-top: 10px;
+  height: 90vh;
+  justify-content: space-between;
+  margin: 10px -15px;
   width: 15%;
-  justify-content: center;
-  height: 100%;
 }
 
-.icon-left i
-{
-  align-items: baseline;
-  margin-top: 15px;
-  margin-right: 20px;
-  margin-left: 10px;
+.links {
+  flex-direction: column;
+  display: flex;
 }
 
-.icon-left a
-{
-  color:black;
-  font-size: 0.4cm;
+.link{
+  display: flex;
+  align-items:center;
+  gap:1rem;
+  margin:10px 25px;
+  color: black;
+  border-radius: 10px;
+  width: 80%;
+  height: 20%;
 }
+.link h2, .link h3{
+  font-weight: bold;
+
+}
+
+
+@media (hover: hover) {
+  .link:hover {
+    background-color: #709A8E;
+    opacity: 0.7;
+    color: white;
+  }
+}
+
 
 .profile
 {
   background-color: #E3BD86;
   margin-top: 10px;
-  width: 100%;
+  width: 90%;
   padding: 40px;
 }
 
