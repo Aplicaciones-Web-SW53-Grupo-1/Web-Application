@@ -1,6 +1,7 @@
 import PrimeVue from "primevue/config"
 import "primevue/resources/primevue.min.css"; //core css
 import "primevue/resources/themes/lara-light-blue/theme.css";
+import 'primeicons/primeicons.css';
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import Calendar from "primevue/calendar";

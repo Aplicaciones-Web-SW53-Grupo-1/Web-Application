@@ -1,28 +1,15 @@
 <template>
 
-  <div class="body">
+  <body>
 
-    <div class="icons">
-
-      <div class="icon-left">
-        <router-link to="/user-home" class="link"> <i class="pi pi-home"></i> <h3>Home</h3></router-link>
+    <div class="container">
+      <div class="links">
+        <router-link to="/user-home" class="link"><i class="pi pi-home"></i> <h2>Home</h2> </router-link>
+        <router-link to="/tutorlist" class="link"> <i class="pi pi-users"></i> <h2>Tutors</h2></router-link>
+        <router-link to="/user-profile" class="link"> <i class="pi pi-user"></i> <h2>Profile</h2></router-link>
+        <router-link to="/user-edit" class="link"> <i class="pi pi-cog"></i> <h2>Settings</h2></router-link>
       </div>
-
-      <div class="icon-left">
-        <router-link to="" class="link"> <i class="pi pi-user-edit"></i> <h3>Tutors</h3></router-link>
-      </div>
-
-      <div class="icon-left">
-        <router-link to="/user-profile" class="link"> <i class="pi pi-user"></i> <h3>Profile</h3></router-link>
-      </div>
-
-      <div class="icon-left">
-        <router-link to="/user-edit" class="link"> <i class="pi pi-cog"></i> <h3>Settings</h3></router-link>
-      </div>
-
-      <div class="icon-left" id="logout">
-        <router-link to="" class="link"> <i class="pi pi-sign-out"></i> <h3>Logout</h3></router-link>
-      </div>
+      <router-link to="/" class="link logout"> <i class="pi pi-sign-out"></i> <h3>Log out</h3> </router-link>
     </div>
 
     <div class="profile">
@@ -78,44 +65,64 @@
 
     </div>
 
-  </div>
+  </body>
 
 
 </template>
 
 <style scoped>
 
-*
-{
+* {
   text-decoration: none;
 }
 
-.body
+body
 {
+  display: flex;
+  width: 100%;
+  height: 600px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #709A8E;
+  height: 89vh;
+  justify-content: space-between;
+  margin: 0 -15px;
+  width: 15%;
+}
+
+.links {
+  flex-direction: column;
   display: flex;
 }
 
-.icons {
-  background-color: #709A8E;
-  margin-top: 10px;
-  width: 15%;
-  justify-content: center;
-  height: 100%;
+.link{
+  display: flex;
+  align-items:center;
+  gap:1rem;
+  margin:10px 25px;
+  color: black;
+  border-radius: 10px;
+  width: 80%;
+  height: 20%;
+}
+.link h2, .link h3{
+  font-weight: bold;
+
 }
 
-.icon-left i
-{
-  align-items: baseline;
-  margin-top: 15px;
-  margin-right: 20px;
-  margin-left: 10px;
+
+@media (hover: hover) {
+  .link:hover {
+    background-color: #709A8E;
+    opacity: 0.7;
+    color: white;
+  }
 }
 
-.icon-left a
-{
-  color:black;
-  font-size: 0.4cm;
-}
+
 
 #logout
 {
@@ -140,7 +147,7 @@ a:hover
   display:flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #E3BD86;
+
   width: 100%;
   margin-top: 10px;
 }

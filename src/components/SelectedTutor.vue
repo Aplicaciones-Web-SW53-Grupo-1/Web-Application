@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <button class="hire-button">Hire Tutor</button>
+    <pv-button @click="hire()" class="hire-button" label="Hire Tutor" />
     <div class="selected-tutor">
       <div class="tutor-info">
         <img
@@ -41,8 +41,15 @@
 </template>
 
 <script>
+import router from "@/router";
+
 export default {
   name: "SelectedT",
+  methods:{
+    hire(){
+      router.push('/payment');
+    }
+  }
 };
 </script>
 
@@ -53,13 +60,14 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  margin-top:20px;
 }
 
 .selected-tutor {
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 15px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,11 +79,9 @@ export default {
 .hire-button {
   background-color: green;
   color: white;
-  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
 }
 
 .tutor-info {
@@ -97,12 +103,11 @@ export default {
 
 .tutor-info-row {
   display: flex;
-  align-items: center;
   margin-top: 10px;
 }
 
 .tutor-info-row span {
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 .see-review-button {

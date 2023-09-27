@@ -44,6 +44,7 @@
 <script>
 import Card from 'primevue/card';
 import Button from 'primevue/button';
+import router from "@/router";
 
 export default {
   props: {
@@ -55,8 +56,7 @@ export default {
   },
   methods: {
     verMas(tutor) {
-      // Lógica para mostrar más información del tutor al hacer clic en "See More"
-      console.log('Ver más detalles de', tutor.nombre);
+      router.push('/selected')
     },
   },
 };
