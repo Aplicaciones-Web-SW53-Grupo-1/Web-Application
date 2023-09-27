@@ -5,29 +5,23 @@
     <div class="icons">
 
       <div class="icon-left">
-        <i class="pi pi-home" style="font-size: 2.5rem"></i>
-        <a href="/user-home" >Home</a>
+        <router-link to="/user-home" class="link"> <i class="pi pi-home"></i> <h3>Home</h3></router-link>
       </div>
 
       <div class="icon-left">
-       <i class="pi pi-user-edit" style="font-size: 2.5rem"></i>
-        <a href="" >Tutors</a>
+        <router-link to="" class="link"> <i class="pi pi-home"></i> <h3>Tutors</h3></router-link>
      </div>
 
-
       <div class="icon-left">
-        <i class="pi pi-user" style="font-size: 2.5rem"></i>
-        <a href="/user-profile" >Profile</a>
+        <router-link to="/user-profile" class="link"> <i class="pi pi-user"></i> <h3>Profile</h3> </router-link>
       </div>
 
       <div class="icon-left">
-        <i class="pi pi-cog" style="font-size: 2.5rem"></i>
-        <a href="" >Settings</a>
+        <router-link to="/user-edit" class="link"> <i class="pi pi pi-cog"></i> <h3>Settings</h3></router-link>
       </div>
 
       <div class="icon-left" id="logout">
-        <i class="pi pi-sign-out" style="font-size: 2.5rem"></i>
-        <a href="" >Logout</a>
+        <router-link to="" class="link"> <i class="pi pi-sign-out"></i> <h3>Logout</h3></router-link>
       </div>
     </div>
 
@@ -107,7 +101,7 @@ a:hover
 
 #logout
 {
-  margin-top: 300px;
+  margin-top: 250px;
 }
 
 body
@@ -189,6 +183,11 @@ img
   font-weight: 700;
 }
 
+h3
+{
+  margin-top: 15px;
+  margin-left: 15px;
+}
 
 </style>
 
