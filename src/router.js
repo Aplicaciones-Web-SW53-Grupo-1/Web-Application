@@ -12,6 +12,9 @@ import UserHomeView from "@/views/UserHomeView.vue";
 import UserEditView from "@/views/UserEditView.vue";
 import UserProfileView from "@/views/UserProfileView.vue";
 
+import ChooseScheduleView from "@/views/ChooseScheduleView.vue";
+import PaymentView from "@/views/PaymentView.vue";
+
 const routes = [
     { path: "/", component: WelcomeView },
     { path: "/register-student", component: RegisterView},
@@ -24,7 +27,9 @@ const routes = [
     { path: "/tutorlist", component: TutorList},
     { path: "/user-home", component: UserHomeView},
     { path: "/user-edit", component: UserEditView},
-    { path: "/user-profile", component: UserProfileView}
+    { path: "/user-profile", component: UserProfileView},
+    { path: "/choose-schedule/:id", component: ChooseScheduleView},
+    { path: "/payment", component: PaymentView}
 
 ];
 
