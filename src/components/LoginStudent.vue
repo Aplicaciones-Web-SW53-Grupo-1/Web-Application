@@ -32,7 +32,7 @@ export default{
         if(this.incorrectData) {
           this.tried = true;
         }else {
-          router.push('/');/* Aqui ponen la ruta*/
+          router.push('/user-home');/* Aqui ponen la ruta*/
         }
 
       })
