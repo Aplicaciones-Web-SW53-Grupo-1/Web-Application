@@ -47,7 +47,7 @@ export default {
   name: "SelectedT",
   methods:{
     hire(){
-      router.push('/payment');
+      router.push('/choose-schedule/:id');
     }
   }
 };
