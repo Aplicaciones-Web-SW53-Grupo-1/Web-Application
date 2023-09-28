@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <button class="see-review-button">See Review</button>
+      <pv-button @click="review()" class="hire-button" label="See Review"/>
     </div>
 
 
@@ -48,6 +48,9 @@ export default {
   methods:{
     hire(){
       router.push('/choose-schedule/:id');
+    },
+    review(){
+      router.push('/rating');
     }
   }
 };
