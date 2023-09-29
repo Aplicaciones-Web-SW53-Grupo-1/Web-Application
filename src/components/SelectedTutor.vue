@@ -47,7 +47,7 @@ export default {
   name: "SelectedT",
   methods:{
     hire(){
-      router.push('/choose-schedule/:id');
+      router.push('/choose-schedule/1');
     },
     review(){
       router.push('/rating');
