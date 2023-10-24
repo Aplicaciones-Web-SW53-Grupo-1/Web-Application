@@ -111,5 +111,27 @@
       "review": "Un profesor muy amable, si no entiendes a la primera, te vuelve a explicar las veces que sean necesarias",
       "stars": 4
     }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "name": "Juan",
+      "lastname": "Perez",
+      "photo": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png",
+      "age": 17,
+      "course": "Programming",
+      "grades": [
+        {
+          "test": "Practica 1",
+          "date": "2023-09-07",
+          "score": "20"
+        },
+        {
+          "test": "Cuestionario 1",
+          "date": "",
+          "score": ""
+        }
+      ]
+    }
   ]
 }
