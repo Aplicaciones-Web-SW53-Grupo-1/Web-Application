@@ -14,6 +14,7 @@ import UserProfileView from "@/views/UserProfileView.vue";
 
 import ChooseScheduleView from "@/views/ChooseScheduleView.vue";
 import PaymentView from "@/views/PaymentView.vue";
+import ReviewView from "@/views/ReviewView.vue";
 
 const routes = [
     { path: "/", component: WelcomeView },
@@ -29,7 +30,8 @@ const routes = [
     { path: "/user-edit", component: UserEditView},
     { path: "/user-profile", component: UserProfileView},
     { path: "/choose-schedule/:id", component: ChooseScheduleView},
-    { path: "/payment", component: PaymentView}
+    { path: "/payment", component: PaymentView},
+    { path: "/reviews", component: ReviewView}
 
 ];
 
