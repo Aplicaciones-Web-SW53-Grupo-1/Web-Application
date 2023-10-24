@@ -1,72 +1,60 @@
-<script >
-import StudentService from "@/services/Student.service"
-export default {
-  name: "registerStudent",
-  data(){
-    return{
-      name: null,
-      lastname: null,
-      email: null,
-      password: null,
-      selectedGenre: null,
-      genres: [
-        {name: 'Male', code: 'M'},
-        {name: 'Female', code: 'F'}
-      ],
-      birthday: null,
-      genre: null,
-      cellphone: null,
-      value: null,
-      tried: false,
-      studentService: null,
-      students: [],
-      student: {},
-      image: null,
-    };
-  },
-  created(){
-    this.studentService = new StudentService();
-    this.studentService.getAll().then((response)=>{
-      this.students = response.data;
-    });
-  },
+<script>
+  import TutorService from "@/services/Tutor.service";
 
-  methods: {
+  export default {
+    name: "registerTutor",
+    data(){
+      return{
+        name: null,
+        lastname: null,
+        email: null,
+        password: null,
+        cellphone: null,
+        tutorService: null,
+        tutors: [],
+        tutor: {},
+        image: null,
+      };
+    },
+    created(){
+      this.tutorService = new TutorService();
+      this.tutorService.getAll().then((response)=>{
+        this.tutors = response.data;
+      });
+    },
 
-    register() {
-      const formattedDate = this.value.toISOString().split('T')[0];
+    methods:
+        {
+          register(){
+            this.tutor={
+              id: this.tutors.length,
+              name: this.name,
+              lastname: this.lastname,
+              email: this.email,
+              password: this.password,
+              cellphone: this.cellphone,
+              image: "https://cdn-icons-png.flaticon.com/512/2784/2784445.png"
+            }
 
-      this.student={
-        id: this.students.length,
-        name: this.name,
-        lastname: this.lastname,
-        email: this.email,
-        password: this.password,
-        genre: this.selectedGenre,
-        birthday: formattedDate,
-        cellphone: this.cellphone,
-        image: "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png",
-      }
-
-      this.studentService.create(this.student);
-    }
+            this.tutorService.create(this.tutor);
+          }
+        }
   }
-}
 </script>
 
 <template>
   <div class="registerContainer">
 
-  <div class="image-upload-container">
-    <div class="image-preview">
-      <img src="../assets/images/guest.webp" alt="User Image" />
+    <div class="image-upload-container">
+      <div class="image-preview">
+        <img src="../assets/images/guest.webp" alt="User Image" />
+      </div>
+      <div class="upload-button">
+        <pv-fileupload mode="basic" accept="image/*" @upload="" maxFileSize="1000" label="Choose Image"/>
+      </div>
     </div>
-    <div class="upload-button">
-      <pv-fileupload mode="basic" accept="image/*" @upload="" maxFileSize="1000" label="Choose Image"/>
-    </div>
-  </div>
 
-  <div class="register-form">
+    <div class="register-form">
       <div class="title-form">
         <h2>Register</h2>
       </div>
@@ -93,20 +81,6 @@ export default {
         </div>
 
         <div class="inputContainer">
-          <label for="calendar">Birthday</label>
-          <pv-calendar v-model="value" dateFormat="dd/mm/yy" id="calendar" placeholder="Day/Month/Year"/>
-        </div>
-
-      </div>
-
-      <div class="inputContainers">
-
-        <div class="inputContainer">
-          <label for="genre">Genre</label>
-          <pv-dropdown v-model="selectedGenre" :options="genres" optionLabel="name" id="genre" placeholder="Select a Genre" />
-        </div>
-
-        <div class="inputContainer">
           <label for="cellphone">Cellphone</label>
           <pv-input-text v-model="cellphone" id="cellphone" type="string" />
         </div>
@@ -128,7 +102,7 @@ export default {
       </div>
 
       <div class="buttonContainer">
-        <router-link to="login-tutor"> <pv-button @click="register()" label="Register" class="p-button-lg"></pv-button> </router-link>
+        <router-link to="login-student"> <pv-button @click="register()" label="Register" class="p-button-lg"></pv-button> </router-link>
       </div>
 
     </div>
@@ -146,7 +120,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 8.5vw;
+  padding: 9vw;
+  margin-left: 30px;
 }
 
 .image-preview {
@@ -196,11 +171,12 @@ h3{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 
 .register-form{
-  padding: 6vw;
-  margin-right: 5vw;
+  padding: 8vw;
+  margin-right: 7vw;
 }
 
 @media (max-width: 750px){
