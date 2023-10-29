@@ -15,6 +15,7 @@ import ChooseScheduleView from "@/views/ChooseScheduleView.vue";
 import PaymentView from "@/views/PaymentView.vue";
 import LoginTutorView from "./views/LoginTutorView.vue";
 import RegisterTutorView from "./views/RegisterTutorView.vue";
+import TutorChat from "@/components/TutorChat.vue";
 import StudentListView from "@/views/StudentListView.vue";
 const routes = [
     { path: "/", component: WelcomeView },
@@ -33,6 +34,7 @@ const routes = [
     { path: "/payment", component: PaymentView},
     { path: "/login-tutor", component: LoginTutorView},
     { path: "/register-tutor", component: RegisterTutorView},
+    { path: "/tutorchat", component: TutorChat},
     { path: "/studentlist", component: StudentListView}
 ];
 
