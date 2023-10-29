@@ -5,6 +5,7 @@
       "name": "Jonatan",
       "lastname": "Curi",
       "email": "u201912404@gmail.com",
+      "age": 17,
       "password": "asd",
       "genre": {
         "name": "Male",
@@ -12,7 +13,9 @@
       },
       "birthday": "2023-09-11",
       "cellphone": "123456789",
+      "specialty": "Programming",
       "image": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png"
+
     }
   ],
 
@@ -86,6 +89,20 @@
       "cardNumber": "1",
       "expirationDate": "1",
       "cvv": 1
+    }
+  ],
+  "calificaciones": [
+    {
+      "tipo": "Calificacion 1",
+      "fecha": "2023-10-26",
+      "puntaje": "12/20",
+      "estado": "CALIFICADO"
+    },
+    {
+      "tipo": "Calificacion 2",
+      "fecha": "2023-10-25",
+      "puntaje": "10/20",
+      "estado": "ENVIADO"
     }
   ]
 }
