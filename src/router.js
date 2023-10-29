@@ -15,7 +15,7 @@ import ChooseScheduleView from "@/views/ChooseScheduleView.vue";
 import PaymentView from "@/views/PaymentView.vue";
 import LoginTutorView from "./views/LoginTutorView.vue";
 import RegisterTutorView from "./views/RegisterTutorView.vue";
-
+import StudentListView from "@/views/StudentListView.vue";
 const routes = [
     { path: "/", component: WelcomeView },
     { path: "/register-student", component: RegisterView},
@@ -32,8 +32,8 @@ const routes = [
     { path: "/choose-schedule/:id", component: ChooseScheduleView},
     { path: "/payment", component: PaymentView},
     { path: "/login-tutor", component: LoginTutorView},
-    { path: "/register-tutor", component: RegisterTutorView}
-
+    { path: "/register-tutor", component: RegisterTutorView},
+    { path: "/studentlist", component: StudentListView}
 ];
 
 const router = createRouter({
