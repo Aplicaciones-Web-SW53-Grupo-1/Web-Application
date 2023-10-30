@@ -5,7 +5,6 @@
       "name": "Jonatan",
       "lastname": "Curi",
       "email": "u201912404@gmail.com",
-      "age": 17,
       "password": "asd",
       "genre": {
         "name": "Male",
@@ -13,9 +12,7 @@
       },
       "birthday": "2023-09-11",
       "cellphone": "123456789",
-      "specialty": "Programming",
       "image": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png"
-
     }
   ],
 
@@ -103,6 +100,52 @@
       "fecha": "2023-10-25",
       "puntaje": "10/20",
       "estado": "ENVIADO"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "tutorId": 1,
+      "student": {
+        "name": "Juan",
+        "lastname": "Perez",
+        "image": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png"
+      },
+      "review": "Enseña bien, explica cada codigo que realiza y deja tareas muy entretenidas",
+      "stars": 4
+    },
+    {
+      "id": 2,
+      "tutorId": 1,
+      "student": {
+        "name": "Sergio",
+        "lastname": "Costa",
+        "image": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png"
+      },
+      "review": "Un profesor muy amable, si no entiendes a la primera, te vuelve a explicar las veces que sean necesarias",
+      "stars": 4
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "name": "Juan",
+      "lastname": "Perez",
+      "photo": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png",
+      "age": 17,
+      "course": "Programming",
+      "grades": [
+        {
+          "test": "Practica 1",
+          "date": "2023-09-07",
+          "score": "20"
+        },
+        {
+          "test": "Cuestionario 1",
+          "date": "",
+          "score": ""
+        }
+      ]
     }
   ]
 }

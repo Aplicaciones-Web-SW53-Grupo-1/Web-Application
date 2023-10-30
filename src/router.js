@@ -11,12 +11,10 @@ import TutorList from "@/views/TutorListView.vue";
 import UserHomeView from "@/views/UserHomeView.vue";
 import UserEditView from "@/views/UserEditView.vue";
 import UserProfileView from "@/views/UserProfileView.vue";
+
 import ChooseScheduleView from "@/views/ChooseScheduleView.vue";
 import PaymentView from "@/views/PaymentView.vue";
-import LoginTutorView from "./views/LoginTutorView.vue";
-import RegisterTutorView from "./views/RegisterTutorView.vue";
-import TutorChat from "@/components/TutorChat.vue";
-import StudentListView from "@/views/StudentListView.vue";
+
 const routes = [
     { path: "/", component: WelcomeView },
     { path: "/register-student", component: RegisterView},
@@ -35,7 +33,10 @@ const routes = [
     { path: "/login-tutor", component: LoginTutorView},
     { path: "/register-tutor", component: RegisterTutorView},
     { path: "/tutorchat", component: TutorChat},
-    { path: "/studentlist", component: StudentListView}
+    { path: "/studentlist", component: StudentListView},
+    { path: "/reviews", component: ReviewView},
+    { path: "/selected-student", component: SelectedStudentView}
+
 ];
 
 const router = createRouter({
