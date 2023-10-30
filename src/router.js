@@ -21,6 +21,7 @@ import StudentListView from "@/views/StudentListView.vue";
 import ReviewView from "@/views/ReviewView.vue";
 import SelectedStudentView from "@/views/SelectedStudentView.vue";
 import tutorEditView from "@/views/TutorEditView.vue";
+import tutorProfileView from "@/views/TutorProfileView.vue";
 
 const routes = [
     { path: "/", component: WelcomeView },
@@ -43,7 +44,8 @@ const routes = [
     { path: "/studentlist", component: StudentListView},
     { path: "/reviews", component: ReviewView},
     { path: "/selected-student", component: SelectedStudentView},
-    { path: "/tutor-edit", component: tutorEditView}
+    { path: "/tutor-edit", component: tutorEditView},
+    { path: "/tutor-prof", component: tutorProfileView}
 
 ];
 
