@@ -14,6 +14,12 @@ import UserProfileView from "@/views/UserProfileView.vue";
 
 import ChooseScheduleView from "@/views/ChooseScheduleView.vue";
 import PaymentView from "@/views/PaymentView.vue";
+import LoginTutorView from "@/views/LoginTutorView.vue";
+import RegisterTutorView from "@/views/RegisterTutorView.vue";
+import TutorChat from "@/components/TutorChat.vue";
+import StudentListView from "@/views/StudentListView.vue";
+import ReviewView from "@/views/ReviewView.vue";
+import SelectedStudentView from "@/views/SelectedStudentView.vue";
 
 const routes = [
     { path: "/", component: WelcomeView },
