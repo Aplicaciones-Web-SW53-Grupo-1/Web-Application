@@ -2,19 +2,19 @@
   <div class="user-profile">
     <div class="container">
       <div class="links">
-        <router-link to="/user-home" class="link">
+        <router-link to="/tutor-home" class="link">
           <i class="pi pi-home"></i>
           <h2>Home</h2>
         </router-link>
-        <router-link to="/tutorlist" class="link">
+        <router-link to="/studentlist" class="link">
           <i class="pi pi-users"></i>
           <h2>Tutors</h2>
         </router-link>
-        <router-link to="/user-profile" class="link">
+        <router-link to="/tutor-prof" class="link">
           <i class="pi pi-user"></i>
           <h2>Profile</h2>
         </router-link>
-        <router-link to="/user-edit" class="link">
+        <router-link to="/tutor-edit" class="link">
           <i class="pi pi-cog"></i>
           <h2>Settings</h2>
         </router-link>
