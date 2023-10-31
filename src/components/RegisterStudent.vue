@@ -37,7 +37,7 @@ export default {
       const formattedDate = this.value.toISOString().split('T')[0];
 
       this.student={
-        id: this.students.length,
+        id: this.students.length+1,
         name: this.name,
         lastname: this.lastname,
         email: this.email,

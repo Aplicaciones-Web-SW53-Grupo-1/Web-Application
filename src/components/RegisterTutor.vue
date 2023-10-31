@@ -10,6 +10,8 @@
         email: null,
         password: null,
         cellphone: null,
+        specialty: null,
+        cost: null,
         tutorService: null,
         tutors: [],
         tutor: {},
@@ -27,12 +29,14 @@
         {
           register(){
             this.tutor={
-              id: this.tutors.length,
+              id: this.tutors.length+1,
               name: this.name,
               lastname: this.lastname,
               email: this.email,
               password: this.password,
               cellphone: this.cellphone,
+              specialty: this.specialty,
+              cost: this.cost,
               image: "https://cdn-icons-png.flaticon.com/512/2784/2784445.png"
             }
 
@@ -83,6 +87,20 @@
         <div class="inputContainer">
           <label for="cellphone">Cellphone</label>
           <pv-input-text v-model="cellphone" id="cellphone" type="string" />
+        </div>
+
+      </div>
+
+      <div class="inputContainers">
+
+        <div class="inputContainer">
+          <label for="specialty">Specialty</label>
+          <pv-input-text v-model="specialty" id="specialty" type="string" />
+        </div>
+
+        <div class="inputContainer">
+          <label for="cost">Cost</label>
+          <pv-input-text v-model="cost" id="cost" type="string" />
         </div>
 
       </div>

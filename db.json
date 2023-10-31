@@ -15,36 +15,41 @@
       "image": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png"
     }
   ],
-
   "tutores": [
     {
       "id": 1,
-      "nombre": "Esteban Soler",
-      "photo": "https://cdn.discordapp.com/attachments/1149190528756363337/1155227569097035776/topgun.png",
-      "precio": 15,
-      "puntaje": 4,
-      "especialidad": "Matemáticas"
-
+      "name": "Esteban",
+      "lastname": "Soler",
+      "email": "esteban.soler@gmail.com",
+      "password": "contraseña",
+      "cellphone": "998456132",
+      "specialty": "Programación",
+      "cost": "12.30",
+      "image": "https://cdn-icons-png.flaticon.com/512/2784/2784445.png"
     },
     {
       "id": 2,
-      "nombre": "Kendal Suarez",
-      "photo": "https://cdn.discordapp.com/attachments/1149190528756363337/1155228044252954644/da77990928628b8d692b91ced1432784.png",
-      "precio": 10,
-      "puntaje": 3.5,
-      "especialidad": "Historia"
+      "name": "Kendal",
+      "lastname": "Suarez",
+      "email": "kendal.suarez@gmail.com",
+      "password": "contraseñasupersecreta",
+      "cellphone": "994512384",
+      "specialty": "Matematicas",
+      "cost": "10.00",
+      "image": "https://cdn-icons-png.flaticon.com/512/2784/2784445.png"
     },
     {
       "id": 3,
-      "nombre": "Sergio Costa",
-      "photo":"https://cdn.discordapp.com/attachments/1149190528756363337/1155228483002322954/blade-runner.png",
-      "precio": 20,
-      "puntaje": 4.7,
-      "especialidad": "Ciencias"
+      "name": "Sergio",
+      "lastname": "Costa",
+      "email": "sergio.costa@gmail.com",
+      "password": "admin",
+      "cellphone": "846832999",
+      "specialty": "Lenguaje",
+      "cost": "08.00",
+      "image": "https://cdn-icons-png.flaticon.com/512/2784/2784445.png"
     }
-
   ],
-
   "schedules": [
     {
       "id": 1,
