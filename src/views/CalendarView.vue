@@ -1,32 +1,75 @@
 <template>
-  <div class="calendar-view">
-    <h1 class="calendario">Calendario de Eventos</h1>
-    <Calendar />
+  <div>
+    <div class="event-btn">
+      <input v-model="event.title" placeholder="Event Title"/>
+      <pv-input-text type="datetime-local" v-model="event.start" />
+      <pv-button @click="addEvent">Add Event</pv-button>
+    </div>
+
+    <FullCalendar
+        :options="calendarOptions"
+        @eventClick="handleEventClick"
+    />
   </div>
 </template>
 
-<script>
-import { defineComponent } from "vue";
-import Calendar from "@/components/Calendar.vue"; // Importa el componente Calendar.vue
-
-export default defineComponent({
-  components: {
-    Calendar, // Registra el componente Calendar.vue
-  },
-});
-</script>
-
 <style scoped>
 
-.calendario {
-  text-align: center;
-  font-style: italic;
-
+.event-btn
+{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 50px;
 }
 
-.calendar-view {
-
+.event-btn input
+{
+  margin-left: 10px;
+  margin-right: 10px;
 }
-
 
 </style>
+
+<script>
+import FullCalendar from '@fullcalendar/vue3'
+import dayGridPlugin from '@fullcalendar/daygrid'
+
+export default {
+  components: {
+    FullCalendar
+  },
+  data() {
+    return {
+      calendarOptions: {
+        plugins: [dayGridPlugin],
+        initialView: 'dayGridMonth',
+        height: '650px',
+        events: []
+      },
+      event: {
+        title: '',
+        start: ''
+      }
+    }
+  },
+  methods: {
+    addEvent() {
+
+      this.calendarOptions.events.push({
+        title: this.event.title,
+        start: this.event.start
+      });
+
+      this.event.title = '';
+      this.event.start = '';
+    },
+    handleEventClick(info)
+    {
+      alert('You clicked this event: ' + info.event.title)
+    }
+  }
+}
+</script>
