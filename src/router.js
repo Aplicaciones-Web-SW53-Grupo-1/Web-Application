@@ -22,6 +22,7 @@ import ReviewView from "@/views/ReviewView.vue";
 import SelectedStudentView from "@/views/SelectedStudentView.vue";
 import tutorEditView from "@/views/TutorEditView.vue";
 import tutorProfileView from "@/views/TutorProfileView.vue";
+import TutorHomeView from "@/views/TutorHomeView.vue"
 
 const routes = [
     { path: "/", component: WelcomeView },
@@ -45,7 +46,8 @@ const routes = [
     { path: "/reviews", component: ReviewView},
     { path: "/selected-student", component: SelectedStudentView},
     { path: "/tutor-edit", component: tutorEditView},
-    { path: "/tutor-prof", component: tutorProfileView}
+    { path: "/tutor-prof", component: tutorProfileView},
+    { path: "/tutor-home", component: TutorHomeView}
 
 ];
 
