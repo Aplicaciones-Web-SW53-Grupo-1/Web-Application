@@ -41,7 +41,7 @@ const routes = [
     { path: "/payment", component: PaymentView},
     { path: "/login-tutor", component: LoginTutorView},
     { path: "/register-tutor", component: RegisterTutorView},
-    { path: "/tutorchat", component: TutorChat},
+    { path: "/tutor-chat", component: TutorChat},
     { path: "/studentlist", component: StudentListView},
     { path: "/reviews", component: ReviewView},
     { path: "/selected-student", component: SelectedStudentView},
