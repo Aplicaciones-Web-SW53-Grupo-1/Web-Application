@@ -93,18 +93,33 @@
       "cvv": 1
     }
   ],
-  "calificaciones": [
+  "scores": [
     {
-      "tipo": "Calificacion 1",
-      "fecha": "2023-10-26",
-      "puntaje": "12/20",
-      "estado": "CALIFICADO"
+      "id": 1,
+      "studentId": 1,
+      "tutorId": 1,
+      "type": "Practice 1",
+      "date": "2023-10-26",
+      "score": "12/20",
+      "status": "GRADED"
     },
     {
-      "tipo": "Calificacion 2",
-      "fecha": "2023-10-25",
-      "puntaje": "10/20",
-      "estado": "ENVIADO"
+      "id": 2,
+      "studentId": 1,
+      "tutorId": 1,
+      "type": "Exam 1",
+      "date": "2023-10-25",
+      "score": "0/20",
+      "status": "SUBMITTED"
+    },
+    {
+      "id": 3,
+      "studentId": 1,
+      "tutorId": 1,
+      "type": "DD 1",
+      "date": "2023-10-23",
+      "score": "",
+      "status": "NOTSUBMITTED"
     }
   ],
   "reviews": [

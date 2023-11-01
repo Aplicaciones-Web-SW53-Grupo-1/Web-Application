@@ -1,13 +1,18 @@
 <template>
   <div class="score-view">
-    <h1 class="calificaciones">Calificaciones</h1>
-    <Score :calificaciones="calificaciones" />
-
+    <h1 class="scores">Scores</h1>
+    <div>
+      <label for="studentSelect">Select a Student: </label>
+      <select id="studentSelect" v-model="selectedStudentId" @change="filterScoresByStudent">
+        <option v-for="student in students" :value="student.id">{{ student.name }}</option>
+      </select>
+    </div>
+    <Score :scores="filteredScores" />
   </div>
 </template>
 
 <script>
-import Score from "@/components/Score.vue"; // Importa el componente Score.vue
+import Score from "@/components/Score.vue";
 import axios from "axios";
 
 export default {
@@ -16,32 +21,50 @@ export default {
   },
   data() {
     return {
-      calificaciones: [], // Inicialmente vacío
+      scores: [],
+      students: [],
+      selectedStudentId: null,
+      tutorId: 1,
     };
   },
+  computed: {
+    filteredScores() {
+      return this.scores.filter((score) => {
+        return score.studentId === this.selectedStudentId && score.tutorId === this.tutorId;
+      });
+    },
+  },
+  methods: {
+    filterScoresByStudent() {
+
+      this.$forceUpdate();
+    },
+  },
   mounted() {
-    // Realiza una solicitud HTTP para obtener las calificaciones desde el archivo db.json
-    axios.get("http://localhost:3000/calificaciones").then((response) => {
-      this.calificaciones = response.data;
+
+    axios.get("http://localhost:3000/students").then((response) => {
+      this.students = response.data;
+    });
+
+
+    axios.get("http://localhost:3000/scores").then((response) => {
+      this.scores = response.data;
     });
   },
 };
 </script>
+
 <style scoped>
 body {
   margin: 0;
   background-color: #E3BD86;
   padding: 0;
 }
-.calificaciones {
-  text-align: center; /* Centra el texto horizontalmente */
+.scores {
+  text-align: center;
   font-style: italic;
-  /* Agrega más propiedades de estilo según tus preferencias */
 }
-  /* Estilos personalizados para la vista de la lista de tutores */
-  .score-view {
 
-
+.score-view {
 }
 </style>
-
