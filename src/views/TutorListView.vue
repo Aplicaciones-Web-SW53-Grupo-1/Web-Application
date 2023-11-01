@@ -1,37 +1,45 @@
 <template>
   <div class="tutor-list-view">
     <h1 class="tutorlist">Lista de Tutores</h1>
-    <TutorList :tutores="tutores" />
+    <TutorList :tutores="tutores" :reviews="reviews" />
   </div>
 </template>
 
 <script>
-import TutorList from "@/components/TutorList.vue"; // Asegúrate de importar el componente TutorList.vue
-import axios from "axios"; // Importa axios para realizar la solicitud HTTP
+import TutorList from "@/components/TutorList.vue";
+import axios from "axios";
 
 export default {
   components: {
-    TutorList, // Registra el componente TutorList.vue
+    TutorList,
   },
   data() {
     return {
-      tutores: [], // Inicialmente vacío, se llenará con los tutores obtenidos
+      tutores: [],
+      reviews: [],
     };
   },
   methods: {
     async fetchTutoresFromAPI() {
       try {
-        // Realiza una solicitud HTTP para obtener los tutores desde db.json
-        const response = await axios.get("http://localhost:3000/tutores"); // Asegúrate de que la URL coincida con la configuración de tu JSON Server
-        // Actualiza la lista de tutores con los datos obtenidos de la API
+        const response = await axios.get("http://localhost:3000/tutores");
         this.tutores = response.data;
       } catch (error) {
         console.error("Error al obtener tutores:", error);
       }
     },
+    async fetchReviewsFromAPI() {
+      try {
+        const response = await axios.get("http://localhost:3000/reviews");
+        this.reviews = response.data;
+      } catch (error) {
+        console.error("Error al obtener calificaciones:", error);
+      }
+    },
   },
   mounted() {
     this.fetchTutoresFromAPI();
+    this.fetchReviewsFromAPI();
   },
 };
 </script>
@@ -42,13 +50,13 @@ body {
   background-color: #E3BD86;
   padding: 0;
 }
-.tutorlist {
-  text-align: center; /* Centra el texto horizontalmente */
-  font-style: italic;
-  /* Agrega más propiedades de estilo según tus preferencias */
-}
-/* Estilos personalizados para la vista de la lista de tutores */
-.tutor-list-view {
 
+.tutorlist {
+  text-align: center;
+  font-style: italic;
+}
+
+.tutor-list-view {
+  /* Agrega estilos personalizados según sea necesario */
 }
 </style>
