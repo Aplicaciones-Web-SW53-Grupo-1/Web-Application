@@ -70,11 +70,13 @@ export default {
   background-color: #f5f5f5;
   padding: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 6px;
 }
 
 .tutor-info {
   display: flex;
   flex-direction: column;
+
 }
 
 .tutor-name {
@@ -89,6 +91,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+
 }
 
 .tutor-photo {

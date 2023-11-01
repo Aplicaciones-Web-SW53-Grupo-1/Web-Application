@@ -7,14 +7,14 @@
             <div class="student-info">
               <!-- Nombre y Apellido -->
               <div class="student-name">{{ student.name }} {{ student.lastname }}</div>
-              <div class="student-age">{{ student.age }} años</div>
+              <div class="student-birthday">Birthday: {{ student.birthday }}</div>
               <!-- Contenedor para la foto y los detalles -->
               <div class="student-details">
                 <div class="student-photo">
                   <img :src="student.image" alt="Foto del estudiante" />
                 </div>
                 <!-- Especialidad -->
-                <div class="student-specialty">{{ student.specialty }}</div>
+                <div class="student-cellphone">Phone: +51 {{ student.cellphone }}</div>
               </div>
             </div>
           </template>
@@ -57,7 +57,8 @@ export default {
   background-color: #f5f5f5;
   padding: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
+  margin-bottom: 6px;
+
 }
 
 .student-info {
@@ -68,16 +69,19 @@ export default {
 }
 
 .student-name {
-  font-size: 24px;
+  font-size: 34px;
   font-weight: bold;
   text-align: center;
 }
 
-.student-age {
-  font-size: 16px;
+.student-birthday {
+  font-size: 15px;
+  font-weight: bold;
   text-align: center;
-  color: #555;
-  margin-top: 5px;
+
+  margin-top: 10px;
+  padding: 5px 10px;
+
 }
 
 .student-details {
@@ -101,11 +105,10 @@ export default {
   object-fit: cover;
 }
 
-.student-specialty {
-  font-size: 18px;
-  text-align: center;
-  color: #007bff;
-  margin-top: 10px;
+.student-cellphone {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 30px;
 }
 
 .p-button-text {
