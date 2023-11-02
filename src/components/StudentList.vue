@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     verMas(student) {
-      router.push('/selected')
+      router.push('/selected-student')
     },
   },
 };
