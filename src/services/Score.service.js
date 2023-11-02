@@ -6,14 +6,14 @@ const http = axios.create({
 
 class ScoreService {
     getById(id) {
-        return http.get("appointments/" + id);
+        return http.get("scores?studentId=" + id);
     }
     getAll() {
-        return http.get('appointments');
+        return http.get('scores');
     }
 
     create(data) {
-        return http.post("appointments", data);
+        return http.post("scores", data);
     }
 }
 

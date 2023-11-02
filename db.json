@@ -95,9 +95,10 @@
       "price": "S/15.00"
     }
   ],
-  "creditCards": [
+  "payments": [
     {
       "id": 1,
+      "studentId": 1,
       "owner": "h",
       "cardNumber": "1",
       "expirationDate": "1",
