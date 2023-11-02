@@ -15,36 +15,52 @@
       "image": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png"
     }
   ],
-
   "tutores": [
     {
       "id": 1,
-      "nombre": "Esteban Soler",
-      "photo": "https://cdn.discordapp.com/attachments/1149190528756363337/1155227569097035776/topgun.png",
-      "precio": 15,
-      "puntaje": 4,
-      "especialidad": "Matemáticas"
-
+      "name": "Esteban",
+      "lastname": "Soler",
+      "email": "esteban.soler@gmail.com",
+      "password": "contraseña",
+      "cellphone": "998456132",
+      "specialty": "Programación",
+      "cost": "12.30",
+      "image": "https://cdn-icons-png.flaticon.com/512/2784/2784445.png"
     },
     {
       "id": 2,
-      "nombre": "Kendal Suarez",
-      "photo": "https://cdn.discordapp.com/attachments/1149190528756363337/1155228044252954644/da77990928628b8d692b91ced1432784.png",
-      "precio": 10,
-      "puntaje": 3.5,
-      "especialidad": "Historia"
+      "name": "Kendal",
+      "lastname": "Suarez",
+      "email": "kendal.suarez@gmail.com",
+      "password": "contraseñasupersecreta",
+      "cellphone": "994512384",
+      "specialty": "Matematicas",
+      "cost": "10.00",
+      "image": "https://cdn-icons-png.flaticon.com/512/2784/2784445.png"
     },
     {
       "id": 3,
-      "nombre": "Sergio Costa",
-      "photo":"https://cdn.discordapp.com/attachments/1149190528756363337/1155228483002322954/blade-runner.png",
-      "precio": 20,
-      "puntaje": 4.7,
-      "especialidad": "Ciencias"
+      "name": "Sergio",
+      "lastname": "Costa",
+      "email": "sergio.costa@gmail.com",
+      "password": "admin",
+      "cellphone": "846832999",
+      "specialty": "Lenguaje",
+      "cost": "08.00",
+      "image": "https://cdn-icons-png.flaticon.com/512/2784/2784445.png"
+    },
+    {
+      "id": 4,
+      "name": "Alexis",
+      "lastname": "Froggoziolo",
+      "email": "alexis@gmail.com",
+      "password": "admin",
+      "cellphone": "123456789",
+      "specialty": "Math",
+      "cost": "10.00",
+      "image": "https://cdn-icons-png.flaticon.com/512/2784/2784445.png"
     }
-
   ],
-
   "schedules": [
     {
       "id": 1,
@@ -79,13 +95,89 @@
       "price": "S/15.00"
     }
   ],
-  "creditCards": [
+  "payments": [
     {
       "id": 1,
+      "studentId": 1,
       "owner": "h",
       "cardNumber": "1",
       "expirationDate": "1",
       "cvv": 1
+    }
+  ],
+  "scores": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "tutorId": 1,
+      "type": "Practice 1",
+      "date": "2023-10-26",
+      "score": "12/20",
+      "status": "GRADED"
+    },
+    {
+      "id": 2,
+      "studentId": 1,
+      "tutorId": 1,
+      "type": "Exam 1",
+      "date": "2023-10-25",
+      "score": "0/20",
+      "status": "SUBMITTED"
+    },
+    {
+      "id": 3,
+      "studentId": 1,
+      "tutorId": 1,
+      "type": "DD 1",
+      "date": "2023-10-23",
+      "score": "",
+      "status": "NOTSUBMITTED"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "tutorId": 1,
+      "student": {
+        "name": "Juan",
+        "lastname": "Perez",
+        "image": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png"
+      },
+      "review": "Enseña bien, explica cada codigo que realiza y deja tareas muy entretenidas",
+      "stars": 4
+    },
+    {
+      "id": 2,
+      "tutorId": 1,
+      "student": {
+        "name": "Sergio",
+        "lastname": "Costa",
+        "image": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png"
+      },
+      "review": "Un profesor muy amable, si no entiendes a la primera, te vuelve a explicar las veces que sean necesarias",
+      "stars": 4
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "name": "Juan",
+      "lastname": "Perez",
+      "photo": "https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_people_person_profile_student_user_icon_123383.png",
+      "age": 17,
+      "course": "Programming",
+      "grades": [
+        {
+          "test": "Practica 1",
+          "date": "2023-09-07",
+          "score": "20"
+        },
+        {
+          "test": "Cuestionario 1",
+          "date": "",
+          "score": ""
+        }
+      ]
     }
   ]
 }

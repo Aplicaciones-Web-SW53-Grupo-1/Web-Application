@@ -32,7 +32,7 @@ export default{
         if(this.incorrectData) {
           this.tried = true;
         }else {
-          router.push('/user-home');
+          router.push('/tutor-home');
         }
 
       })
@@ -44,7 +44,6 @@ export default{
 
 <template>
   <div class="center-container">
-
 
   <pv-card class="card_log_in">
     <template #title>

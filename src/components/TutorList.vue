@@ -1,38 +1,28 @@
 <template>
   <div class="tutor-list">
-   <div class="p-grid">
+    <div class="p-grid">
       <div v-for="tutor in tutores" :key="tutor.id" class="p-col-12 p-md-6 p-lg-4">
         <Card class="tutor-card">
-          <!-- Contenido de la tarjeta -->
           <template #content>
             <div class="tutor-info">
-              <!-- Nombre del tutor -->
-              <div class="tutor-name">{{ tutor.nombre }}</div>
-
-              <!-- Contenedor para la foto y los detalles -->
+              <div class="tutor-name">{{ tutor.name }} {{ tutor.lastname }}</div>
               <div class="tutor-details">
-                <!-- Foto del tutor (en un cuadro pequeño con bordes redondeados) -->
                 <div class="tutor-photo">
-                  <img :src="tutor.photo" alt="Foto del tutor" />
+                  <img :src="tutor.image" alt="Foto del tutor" />
                 </div>
-
-                <!-- Precio y Puntaje -->
                 <div class="tutor-price-rating">
                   <div class="tutor-price">
-                    <i class="pi pi-dollar"></i> {{ tutor.precio }}
+                    <i class="pi pi-dollar"></i> {{ tutor.cost }}
                   </div>
                   <div class="tutor-rating">
-                    <i class="pi pi-star"></i> {{ tutor.puntaje }}
+                    <i class="pi pi-star"></i> {{ calcularPromedio(tutor) }}
                   </div>
                 </div>
-
-                <!-- Especialidad -->
-                <div class="tutor-specialty">{{ tutor.especialidad }}</div>
+                <div class="tutor-specialty">{{ tutor.specialty }}</div>
               </div>
             </div>
           </template>
           <template #footer>
-            <!-- Botón "See More" -->
             <Button class="p-button-text" @click="verMas(tutor)">See More</Button>
           </template>
         </Card>
@@ -48,7 +38,8 @@ import router from "@/router";
 
 export default {
   props: {
-    tutores: Array, // Recibe la lista de tutores como prop
+    tutores: Array,
+    reviews: Array,
   },
   components: {
     Card,
@@ -57,6 +48,15 @@ export default {
   methods: {
     verMas(tutor) {
       router.push('/selected')
+    },
+    calcularPromedio(tutor) {
+      const tutorReviews = this.reviews.filter(review => review.tutorId === tutor.id);
+      if (tutorReviews.length === 0) {
+        return 0;
+      }
+
+      const totalStars = tutorReviews.reduce((total, review) => total + review.stars, 0);
+      return totalStars / tutorReviews.length;
     },
   },
 };
@@ -70,16 +70,15 @@ export default {
   background-color: #f5f5f5;
   padding: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-
+  margin-bottom: 6px;
 }
 
-/* Estilos para la información del tutor */
 .tutor-info {
   display: flex;
   flex-direction: column;
+
 }
 
-/* Estilos para el nombre del tutor */
 .tutor-name {
   font-size: 24px;
   font-weight: bold;
@@ -87,15 +86,14 @@ export default {
   margin-bottom: 5px;
 }
 
-/* Estilos para el contenedor de la foto y los detalles */
 .tutor-details {
   display: flex;
-  justify-content: space-between; /* Distribuye los elementos a lo largo del espacio disponible */
-  align-items: center; /* Alinea verticalmente los elementos */
+  justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
+
 }
 
-/* Estilos para la foto del tutor */
 .tutor-photo {
   width: 100px;
   height: 100px;
@@ -110,7 +108,6 @@ export default {
   object-fit: cover;
 }
 
-/* Estilos para el precio y puntaje */
 .tutor-price-rating {
   display: flex;
   flex-direction: column;
@@ -123,11 +120,9 @@ export default {
   margin-bottom: 15px;
 }
 
-/* Estilos para el botón "See More" */
 .p-button-text {
   color: #007bff;
   text-decoration: underline;
   cursor: pointer;
-
 }
 </style>
