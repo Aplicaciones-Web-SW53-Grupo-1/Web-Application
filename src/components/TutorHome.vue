@@ -47,7 +47,7 @@
       </div>
 
       <div class="component">
-        <router-link to="/scoreview" class="cards"><i class="pi pi-star" style="font-size: 7rem"></i></router-link>
+        <router-link to="/reviews" class="cards"><i class="pi pi-star" style="font-size: 7rem"></i></router-link>
         <label>Reviews</label>
       </div>
 

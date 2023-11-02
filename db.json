@@ -48,6 +48,17 @@
       "specialty": "Lenguaje",
       "cost": "08.00",
       "image": "https://cdn-icons-png.flaticon.com/512/2784/2784445.png"
+    },
+    {
+      "id": 4,
+      "name": "Alexis",
+      "lastname": "Froggoziolo",
+      "email": "alexis@gmail.com",
+      "password": "admin",
+      "cellphone": "123456789",
+      "specialty": "Math",
+      "cost": "10.00",
+      "image": "https://cdn-icons-png.flaticon.com/512/2784/2784445.png"
     }
   ],
   "schedules": [

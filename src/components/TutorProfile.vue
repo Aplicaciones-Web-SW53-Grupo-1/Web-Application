@@ -4,10 +4,10 @@
 
     <div class="container">
       <div class="links">
-        <router-link to="/user-home" class="link"><i class="pi pi-home"></i> <h2>Home</h2> </router-link>
-        <router-link to="/tutorlist" class="link"> <i class="pi pi-users"></i> <h2>Tutors</h2></router-link>
-        <router-link to="/user-profile" class="link"> <i class="pi pi-user"></i> <h2>Profile</h2></router-link>
-        <router-link to="/user-edit" class="link"> <i class="pi pi-cog"></i> <h2>Settings</h2></router-link>
+        <router-link to="/tutor-home" class="link"><i class="pi pi-home"></i> <h2>Home</h2> </router-link>
+        <router-link to="/studentlist" class="link"> <i class="pi pi-users"></i> <h2>Students</h2></router-link>
+        <router-link to="/tutor-prof" class="link"> <i class="pi pi-user"></i> <h2>Profile</h2></router-link>
+        <router-link to="/tutor-edit" class="link"> <i class="pi pi-cog"></i> <h2>Settings</h2></router-link>
       </div>
       <router-link to="/" class="link"> <i class="pi pi-sign-out"></i> <h3>Log out</h3> </router-link>
     </div>
@@ -60,7 +60,7 @@
 
         <div class="component">
 
-          <router-link to="/user-edit" class="cards"> <i class="pi pi-user-edit"  style="font-size: 4rem"></i></router-link>
+          <router-link to="/tutor-edit" class="cards"> <i class="pi pi-user-edit"  style="font-size: 4rem"></i></router-link>
 
           <div class="component-column">
             <label>Edit</label>

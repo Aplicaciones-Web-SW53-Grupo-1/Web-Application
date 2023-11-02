@@ -2,27 +2,12 @@
   <div class="user-profile">
     <div class="container">
       <div class="links">
-        <router-link to="/tutor-home" class="link">
-          <i class="pi pi-home"></i>
-          <h2>Home</h2>
-        </router-link>
-        <router-link to="/studentlist" class="link">
-          <i class="pi pi-users"></i>
-          <h2>Tutors</h2>
-        </router-link>
-        <router-link to="/tutor-prof" class="link">
-          <i class="pi pi-user"></i>
-          <h2>Profile</h2>
-        </router-link>
-        <router-link to="/tutor-edit" class="link">
-          <i class="pi pi-cog"></i>
-          <h2>Settings</h2>
-        </router-link>
+        <router-link to="/tutor-home" class="link"><i class="pi pi-home"></i> <h2>Home</h2> </router-link>
+        <router-link to="/studentlist" class="link"> <i class="pi pi-users"></i> <h2>Students</h2></router-link>
+        <router-link to="/tutor-prof" class="link"> <i class="pi pi-user"></i> <h2>Profile</h2></router-link>
+        <router-link to="/tutor-edit" class="link"> <i class="pi pi-cog"></i> <h2>Settings</h2></router-link>
       </div>
-      <router-link to="/" class="link logout">
-        <i class="pi pi-sign-out"></i>
-        <h3>Log out</h3>
-      </router-link>
+      <router-link to="/" class="link"> <i class="pi pi-sign-out"></i> <h3>Log out</h3> </router-link>
     </div>
 
     <div class="profile">
@@ -47,12 +32,6 @@
               <pv-input-text id="email" v-model="email" aria-describedby="email-help" />
             </div>
 
-            <div class="input">
-              <label for="cellphone">Cellphone</label>
-              <br>
-              <pv-input-text id="cellphone" v-model="cellphone" aria-describedby="cellphone-help" />
-            </div>
-
             <label for="curriculum">Upload your Curriculum</label>
             <input type="file" id="curriculum" @change="uploadCurriculum" />
 
@@ -67,9 +46,9 @@
             </div>
 
             <div class="input">
-              <label for="dateBirth">Date of Birth</label>
+              <label for="cellphone">Cellphone</label>
               <br>
-              <pv-calendar v-model="date" id="date" dateFormat="dd/mm/yy"></pv-calendar>
+              <pv-input-text id="cellphone" v-model="cellphone" aria-describedby="cellphone-help" />
             </div>
           </div>
         </div>
@@ -83,7 +62,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 60vh;
 }
 
 .container {
@@ -106,13 +85,16 @@
   margin-top: 20px;
 }
 
-.link {
+
+.link{
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items:center;
+  gap:1rem;
+  margin:10px 25px;
   color: black;
-  text-decoration: none;
-  font-weight: bold;
+  border-radius: 10px;
+  width: 80%;
+  height: 20%;
 }
 
 .link:hover {
