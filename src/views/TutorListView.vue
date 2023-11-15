@@ -1,4 +1,7 @@
 <template>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
   <div class="tutor-list-view">
     <h1 class="tutorlist">Lista de Tutores</h1>
     <TutorList :tutores="tutores" :reviews="reviews" />
@@ -54,9 +57,15 @@ body {
 .tutorlist {
   text-align: center;
   font-style: italic;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 }
 
 .tutor-list-view {
-  /* Agrega estilos personalizados según sea necesario */
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 }
 </style>
