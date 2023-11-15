@@ -7,7 +7,7 @@
 
 <script>
 import StudentList from "@/components/StudentList.vue";
-import axios from "axios"; // Importa axios para realizar la solicitud HTTP
+import axios from "axios";
 
 export default {
   components: {
@@ -22,7 +22,7 @@ export default {
     async fetchStudentsFromAPI() {
       try {
 
-        const response = await axios.get("http://localhost:3000/students"); // Asegúrate de que la URL coincida con la configuración de tu JSON Server
+        const response = await axios.get("http://localhost:3000/students");
 
         this.students = response.data;
       } catch (error) {
@@ -43,12 +43,12 @@ body {
   padding: 0;
 }
 .studentlist {
-  text-align: center; /* Centra el texto horizontalmente */
+  text-align: center;
   font-style: italic;
-  /* Agrega más propiedades de estilo según tus preferencias */
+  margin: 20px 0;
 }
 
 .student-list-view {
-
+  padding: 20px
 }
 </style>
