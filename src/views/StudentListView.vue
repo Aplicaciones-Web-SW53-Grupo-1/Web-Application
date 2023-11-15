@@ -1,4 +1,8 @@
 <template>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
   <div class="student-list-view">
     <h1 class="studentlist">Lista de Estudiantes</h1>
     <StudentList :students="students" />
@@ -46,9 +50,15 @@ body {
   text-align: center;
   font-style: italic;
   margin: 20px 0;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 }
 
 .student-list-view {
-  padding: 20px
+  padding: 20px;
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 }
 </style>
