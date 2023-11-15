@@ -1,7 +1,10 @@
 <template>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
   <div class="tutor-list">
     <div class="p-grid">
-      <div v-for="tutor in tutores" :key="tutor.id" class="p-col-12 p-md-6 p-lg-4">
+      <div v-for="tutor in tutores" :key="tutor.id" class="p-col">
         <Card class="tutor-card">
           <template #content>
             <div class="tutor-info">
@@ -65,18 +68,25 @@ export default {
 <style scoped>
 .tutor-card {
   max-width: 600px;
-  margin: 0 auto;
+
   text-align: center;
+  margin: 0 05px;
   background-color: #f5f5f5;
   padding: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 6px;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 }
 
 .tutor-info {
   display: flex;
   flex-direction: column;
-
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .tutor-name {
@@ -84,6 +94,9 @@ export default {
   font-weight: bold;
   text-align: left;
   margin-bottom: 5px;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 
 .tutor-details {
@@ -91,7 +104,10 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .tutor-photo {
@@ -124,5 +140,10 @@ export default {
   color: #007bff;
   text-decoration: underline;
   cursor: pointer;
+}
+.p-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
 }
 </style>

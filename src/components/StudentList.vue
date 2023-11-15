@@ -1,25 +1,28 @@
 <template>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
   <div class="student-list">
     <div class="p-grid">
       <div v-for="student in students" :key="student.id" class="p-col-12 p-md-6 p-lg-4">
         <Card class="student-card">
           <template #content>
             <div class="student-info">
-
+              <!-- Nombre y Apellido -->
               <div class="student-name">{{ student.name }} {{ student.lastname }}</div>
               <div class="student-birthday">Birthday: {{ student.birthday }}</div>
-
+              <!-- Contenedor para la foto y los detalles -->
               <div class="student-details">
                 <div class="student-photo">
                   <img :src="student.image" alt="Foto del estudiante" />
                 </div>
-
+                <!-- Especialidad -->
                 <div class="student-cellphone">Phone: +51 {{ student.cellphone }}</div>
               </div>
             </div>
           </template>
           <template #footer>
-
+            <!-- Botón "See More" -->
             <Button class="p-button-text" @click="verMas(student)">See More</Button>
           </template>
         </Card>
@@ -32,7 +35,6 @@
 import Card from 'primevue/card';
 import Button from 'primevue/button';
 import router from "@/router";
-import axios from "axios";
 
 export default {
   props: {
@@ -44,7 +46,7 @@ export default {
   },
   methods: {
     verMas(student) {
-      router.push('/selected-student');
+      router.push('/selected-student')
     },
   },
 };
@@ -59,7 +61,6 @@ export default {
   padding: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 6px;
-
   @media (max-width: 768px) {
     max-width: 100%;
   }
@@ -70,7 +71,6 @@ export default {
   flex-direction: column;
   align-items: center;
   margin: 20px 0;
-
   @media (max-width: 768px) {
     margin: 10px 0;
   }
