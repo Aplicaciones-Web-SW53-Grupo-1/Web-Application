@@ -1,4 +1,4 @@
-<template>
+n<template>
 
   <body>
 
@@ -8,8 +8,9 @@
       <router-link to="/tutorlist" class="link"> <i class="pi pi-users"></i> <h2>Tutors</h2></router-link>
       <router-link to="/user-profile" class="link"> <i class="pi pi-user"></i> <h2>Profile</h2></router-link>
       <router-link to="/user-edit" class="link"> <i class="pi pi-cog"></i> <h2>Settings</h2></router-link>
+      <router-link to="/" class="link"> <i class="pi pi-sign-out"></i> <h2>Log out</h2> </router-link>
     </div>
-    <router-link to="/" class="link logout"> <i class="pi pi-sign-out"></i> <h3>Log out</h3> </router-link>
+
   </div>
 
     <div class="central">
@@ -64,10 +65,7 @@
   display: flex;
   flex-direction: column;
   background-color: #709A8E;
-  height: 89vh;
   justify-content: space-between;
-  margin: 0 -15px;
-  width: 15%;
 }
 
 .cards{
@@ -95,28 +93,33 @@
 
 }
 
-
-@media (hover: hover) {
-  .link:hover {
-    background-color: #709A8E;
-    opacity: 0.7;
-    color: white;
+@media (max-width: 768px)
+{
+  .components
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-}
-
-
-.icon-left i
-{
-  align-items: baseline;
-  margin-top: 15px;
-  margin-right: 20px;
-  margin-left: 10px;
-}
-
-.icon-left a
-{
-  color:black;
-  font-size: 0.4cm;
+  .news
+  {
+    display: flex;
+    flex-direction: column;
+  }
+  .component
+  {
+    margin-bottom: 100px;
+  }
+  img
+  {
+    width: 125px;
+    height: 50px;
+    padding: 5px;
+  }
+  h2
+  {
+    font-size: 0.2cm;
+  }
 }
 
 a:hover
@@ -134,7 +137,7 @@ body
   display:flex;
   background-color: #E3BD86;
   width: 100%;
-  height: 600px;
+  height: 100%;
 }
 
 img
@@ -148,7 +151,7 @@ img
   display:flex;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  width: 90%;
   background-color: #709A8E;
   border: 1px solid black;
   border-radius: 33px;
