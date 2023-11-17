@@ -1,12 +1,6 @@
 <template>
   <div class="score-view">
     <h1 class="scores">Scores</h1>
-    <div>
-      <label for="studentSelect">Select a Student: </label>
-      <select id="studentSelect" v-model="selectedStudentId" @change="filterScoresByStudent">
-        <option v-for="student in students" :value="student.id">{{ student.name }}</option>
-      </select>
-    </div>
     <Score :scores="filteredScores" />
   </div>
 </template>
@@ -22,34 +16,40 @@ export default {
   data() {
     return {
       scores: [],
-      students: [],
-      selectedStudentId: null,
-      tutorId: 1,
+
+      studentId: null,
     };
   },
   computed: {
     filteredScores() {
       return this.scores.filter((score) => {
-        return score.studentId === this.selectedStudentId && score.tutorId === this.tutorId;
+        return score.studentId === this.studentId ;
       });
     },
   },
   methods: {
-    filterScoresByStudent() {
+    fetchScoresAndStudent() {
 
-      this.$forceUpdate();
+      const studentId = this.$route.params.id;
+
+
+      axios.get("http://localhost:3000/scores").then((response) => {
+        this.scores = response.data;
+      });
+
+
+      this.studentId = parseInt(studentId);
     },
   },
   mounted() {
 
-    axios.get("http://localhost:3000/students").then((response) => {
-      this.students = response.data;
-    });
+    this.fetchScoresAndStudent();
+  },
+  watch: {
 
-
-    axios.get("http://localhost:3000/scores").then((response) => {
-      this.scores = response.data;
-    });
+    $route(to, from) {
+      this.fetchScoresAndStudent();
+    },
   },
 };
 </script>

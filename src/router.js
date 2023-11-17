@@ -33,7 +33,7 @@ const routes = [
     { path: "/selected", component:SelectedTutorView },
     { path: "/chat", component:chatView },
     { path: "/calendar", component: CalendarView},
-    { path: "/scoreview", component: ScoreView},
+    { path: "/scoreview/:id", component: ScoreView},
     { path: "/tutorlist", component: TutorList},
     { path: "/user-home", component: UserHomeView},
     { path: "/user-edit", component: UserEditView},
