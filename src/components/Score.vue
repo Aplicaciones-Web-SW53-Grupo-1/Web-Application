@@ -116,6 +116,7 @@ export default defineComponent({
 .scores {
   max-width: 600px;
   margin: 0 auto;
+
 }
 
 .general {
@@ -154,5 +155,19 @@ export default defineComponent({
 .total-value {
   flex: 2;
   text-align: right;
+}
+@media (max-width: 600px) {
+  .general {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .type,
+  .date,
+  .score {
+    flex: none;
+    width: 100%;
+    text-align: left;
+  }
 }
 </style>

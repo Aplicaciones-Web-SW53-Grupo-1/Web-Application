@@ -63,8 +63,23 @@ body {
 .scores {
   text-align: center;
   font-style: italic;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 }
 
 .score-view {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+@media (max-width: 600px) {
+  .score-view {
+    padding: 10px;
+  }
+
+  .scores {
+    font-size: 18px;
+  }
 }
 </style>
