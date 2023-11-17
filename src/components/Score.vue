@@ -9,24 +9,27 @@
               <div class="total-value">{{ calculateUserTotal(tab.title) }}</div>
             </div>
             <div v-if="tab.title === 'All'">
+
               <div v-for="score in getScores('All')" :key="score.type" class="general">
                 <div class="type">{{ score.type }}</div>
-                <div class="date">{{ score.date }}</div>
-                <div class="score">{{ score.score }}</div>
+                <div class="date">{{ formatDate(score.date) }}</div>
+                <div class="score">{{ score.scoreValue }}</div>
               </div>
             </div>
             <div v-else-if="tab.title === 'Graded'">
+
               <div v-for="score in getScores('Graded')" :key="score.type" class="general">
                 <div class="type">{{ score.type }}</div>
-                <div class="date">{{ score.date }}</div>
-                <div class="score">{{ score.score }}</div>
+                <div class="date">{{ formatDate(score.date) }}</div>
+                <div class="score">{{ score.scoreValue }}</div>
               </div>
             </div>
             <div v-else-if="tab.title === 'Submitted'">
+
               <div v-for="score in getScores('Submitted')" :key="score.type" class="general">
                 <div class="type">{{ score.type }}</div>
-                <div class="date">{{ score.date }}</div>
-                <div class="score">{{ score.score }}</div>
+                <div class="date">{{ formatDate(score.date) }}</div>
+                <div class="score">{{ score.scoreValue }}</div>
               </div>
             </div>
           </div>
@@ -40,6 +43,7 @@
 import { defineComponent } from "vue";
 import TabView from 'primevue/tabview';
 import TabPanel from 'primevue/tabpanel';
+import {formatDate} from "@fullcalendar/core";
 
 export default defineComponent({
   components: {
@@ -48,6 +52,7 @@ export default defineComponent({
   },
   props: {
     scores: Array,
+    selectedStudentId: String,
   },
   data() {
     return {
@@ -67,13 +72,12 @@ export default defineComponent({
     },
   },
   methods: {
+    formatDate,
     getScores(tabTitle) {
       if (tabTitle === 'Graded') {
         return this.gradedScores;
-
       } else if (tabTitle === 'Submitted') {
         return this.submittedScores.concat(this.gradedScores);
-
       } else {
         return this.scores;
       }
@@ -81,8 +85,8 @@ export default defineComponent({
     calculateUserTotal(tabTitle) {
       const userScores = this.getScores(tabTitle);
       const userTotal = userScores.reduce((total, score) => {
-        if (score.score) {
-          const scoreParts = score.score.split('/');
+        if (score.scoreValue) {
+          const scoreParts = score.scoreValue.split('/');
           if (scoreParts.length === 2) {
             return total + Number(scoreParts[0]);
           }
@@ -94,8 +98,8 @@ export default defineComponent({
     calculateAvailableTotal(tabTitle) {
       const availableScores = this.getScores(tabTitle);
       const totalAvailable = availableScores.reduce((total, score) => {
-        if (score.score) {
-          const scoreParts = score.score.split('/');
+        if (score.scoreValue) {
+          const scoreParts = score.scoreValue.split('/');
           if (scoreParts.length === 2) {
             return total + Number(scoreParts[1]);
           }
@@ -109,40 +113,38 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
 .scores {
-  max-width: 600px; /* Aumenta el ancho para una mejor alineación */
+  max-width: 600px;
   margin: 0 auto;
-
 }
 
 .general {
   display: flex;
-  align-items: center; /* Centra verticalmente los elementos */
-  border-bottom: 1px solid #ccc; /* Agrega una línea separadora entre las calificaciones */
-  padding: 10px 0; /* Espaciado entre las calificaciones */
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
 }
 
 .type {
-  flex: 3; /* Tipo ocupa más espacio */
-  text-align: left; /* Alinea el texto a la izquierda */
+  flex: 3;
+  text-align: left;
 }
 
 .date {
-  flex: 3; /* Fecha ocupa más espacio */
-  text-align: left; /* Alinea el texto a la izquierda */
+  flex: 3;
+  text-align: left;
 }
 
 .score {
-  flex: 2; /* Puntaje ocupa más espacio */
-  text-align: right; /* Alinea el texto a la derecha */
+  flex: 2;
+  text-align: right;
 }
 
 .total {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: bold; /* Texto en negrita */
+  font-weight: bold;
 }
 
 .total-label {
