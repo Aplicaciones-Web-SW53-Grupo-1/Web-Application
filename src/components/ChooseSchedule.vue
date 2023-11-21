@@ -37,10 +37,10 @@
 
 <template>
   <div class="container">
-    <h1>Make your schedule</h1>
+    <h1>{{ $t('Schedule') }}</h1>
   </div>
   <div class="sub-title">
-    <h2>These are all available for this tutor</h2>
+    <h2>{{$t('Avaliable schedules')}}</h2>
   </div>
   <div class="card">
     <pv-card v-for="schedule in schedulesTutor">
@@ -56,7 +56,7 @@
         </div>
         <div class = "pv-card-col">
           <pv-button @click="payment()">
-            <h2>Go to payment</h2>
+            <h2>{{ $t('GoPayment') }}</h2>
           </pv-button>
         </div>
         </div>

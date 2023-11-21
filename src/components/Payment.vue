@@ -12,21 +12,41 @@ export default {
       cvv: 0,
       paymentService: null,
       creditCard:[],
+      tried: false,
+      studentId: 2
     }
   },
   methods:{
     confirm(){
       this.paymentService = new PaymentService();
-      this.paymentService.getByParam('?cardNumber=' + this.cardNumber).then((response)=>{
-        this.creditCard = response.data
-        for (let i in this.creditCard){
-          if (this.creditCard[i].owner === this.owner && this.creditCard[i].cardNumber === this.cardNumber && this.creditCard[i].expirationDate === this.expirationDate && this.creditCard[i].cvv === Number(this.cvv)){
-            /*Bank process*/
-            router.push('/selected')
-          }
+      this.paymentService.getById(this.studentId).then((response)=>{
+        this.creditCard = response.data;
+        console.log(this.creditCard);
+        if (this.creditCard.owner === this.owner && this.creditCard.cardNumber === this.cardNumber && this.creditCard.expirationDate === this.expirationDate && this.creditCard.cvv === Number(this.cvv)){
+          /*Bank process*/
+          router.push('/selected')
         }
-
+        else this.tried = true;
+      }).catch((error) => {
+        this.postPayment();
       })
+    },
+
+    postPayment(){
+      let payment = new FormData();
+      payment.append('cardNumber', this.cardNumber);
+      payment.append('expirationDate', this.expirationDate);
+      payment.append('owner', this.owner);
+      payment.append('cvv', this.cvv);
+      payment.append('studentId', this.studentId );
+      const data = {
+        cardNumber: this.cardNumber,
+        expirationDate: this.expirationDate,
+        owner: this.owner,
+        cvv: this.cvv,
+        studentId: this.studentId
+      };
+      this.paymentService.create(data).then((response)=>{console.log(response.data);})
     }
   }
 }
@@ -34,28 +54,28 @@ export default {
 
 <template>
   <div class="container">
-    <h1>Make the payment</h1>
+    <h1>{{ $t('Payment') }}</h1>
   </div>
   <div class="sub-title">
-    <h2>Your payment details</h2>
+    <h2>{{ $t('PaymentDetails') }}</h2>
   </div>
   <div class="form">
     <div class = "data">
     <div class = "inputContainer">
-      <label for="owner">Card holder</label><br>
+      <label for="owner">{{ $t('CardHolder') }}</label><br>
       <pv-input-text id="owner" type="text" placeholder="Owner" class="inputBox" v-model="owner"/>
     </div>
     <div class = "inputContainer">
-      <label for="cardNumber">Card Number</label><br>
+      <label for="cardNumber">{{ $t('CardNumber') }}</label><br>
       <pv-input-text id="cardNumber" type="password" placeholder="XXXX XXXX XXXX XXXX" class="inputBox" v-model="cardNumber"/>
     </div>
     <div class = "passwords">
       <div class = "inputContainer">
-        <label for="expDate">Expiration Date</label><br>
+        <label for="expDate">{{ $t('ExpDate') }}</label><br>
         <pv-input-text id="expDate" type="text" placeholder="MM/YYYY" class="inputBox" v-model="expirationDate"/>
       </div>
       <div class = "inputContainer">
-        <label for="cvv">CVV</label><br>
+        <label for="cvv">{{ $t('CVV') }}</label><br>
         <pv-input-text id="cvv" type="text" class="inputBox" v-model="cvv"/>
       </div>
     </div>
@@ -66,14 +86,14 @@ export default {
   </div>
   <div class="confirmation">
     <div class="checkBox">
-      <label>Total amount</label><br>
+      <label>{{ $t('Amount') }}</label><br>
       <label>S/15.00</label><br>
       <input type="checkbox"/>
-      <label>Save card details for future purchases</label>
+      <label>{{$t('SaveCC')}}</label>
       <h3></h3>
     </div>
     <div class="sendData">
-      <pv-button label="Confirm" class="confirm-button" @click="confirm()"></pv-button>
+      <pv-button :label="$t('Confirm')" class="confirm-button" @click="confirm()"></pv-button>
     </div>
   </div>
 </template>

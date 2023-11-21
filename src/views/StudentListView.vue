@@ -26,7 +26,7 @@ export default {
     async fetchStudentsFromAPI() {
       try {
 
-        const response = await axios.get("http://localhost:3000/students");
+        const response = await axios.get("http://localhost:5255/api/Student");
 
         this.students = response.data;
       } catch (error) {

@@ -21,7 +21,7 @@ export default{
       this.studentService = new StudentService();
       this.studentService.getAll().then((response)=> {
         this.students = response.data;
-
+        console.log("estudiantes: ", this.students);
         for (let n in this.students){
           if(this.students[n].email === this.email && this.students[n].password === this.password){
             this.student = this.student[n];
@@ -32,7 +32,7 @@ export default{
         if(this.incorrectData) {
           this.tried = true;
         }else {
-          router.push('/tutor-home');
+          router.push('/user-home');
         }
 
       })

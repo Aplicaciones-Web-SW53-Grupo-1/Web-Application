@@ -10,45 +10,23 @@
 
     <div class="right-column">
       <div class="top-content">
-        <div class="top-image">
-          <img :src="topImageSrc" width="99"/>
-        </div>
-        <div class="text-container">
-          <p class="top-text">{{ topText }}</p>
-          <p class="bottom-text">{{ bottomText }}</p>
-        </div>
-        <div class="top-image">
-          <img :src="topImageSrc1" width="99"/>
-        </div>
-        <div class="text-container">
-          <p class="top-text">{{ topText1 }}</p>
-          <p class="bottom-text">{{ bottomText1 }}</p>
-        </div>
-        <div class="top-image">
-          <img :src="topImageSrc2" width="99"/>
-        </div>
-        <div class="text-container">
-          <p class="top-text">{{ topText2 }}</p>
-          <p class="bottom-text">{{ bottomText2 }}</p>
-        </div>
-        <div class="top-image">
-          <img :src="topImageSrc3" width="99"/>
-        </div>
-        <div class="text-container">
-          <p class="top-text">{{ topText3 }}</p>
-          <p class="bottom-text">{{ bottomText3 }}</p>
-        </div>
-        <div class="top-image">
-          <img :src="topImageSrc4" width="99"/>
-        </div>
-        <div class="text-container">
-          <p class="top-text">{{ topText4 }}</p>
-          <p class="bottom-text">{{ bottomText4 }}</p>
-        </div>
       </div>
-      <div class="message-box">
-        <textarea v-model="message" placeholder="Escribe aquí"></textarea>
-        <button @click="enviarMensaje">Enviar</button>
+      <div class="chat-container">
+        <div class="chat-messages" ref="chatMessages">
+          <div v-for="(message, index) in messages" :key="index" class="message">
+            <div class="message-content">
+              <p>{{ message.text }}</p>
+              <span>{{ message.timestamp }}</span>
+            </div>
+            <div class="message-sender">
+              <span>{{ message.sender }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="message-box">
+          <textarea v-model="newMessage" @keyup.enter="sendMessage" placeholder="Escribe aquí"></textarea>
+          <button @click="sendMessage">Enviar</button>
+        </div>
       </div>
     </div>
   </div>
@@ -58,38 +36,39 @@
 export default {
   data() {
     return {
-      imageSrc: 'https://cdn.discordapp.com/attachments/1149190528756363337/1155196801918439534/image.png?ex=6513175c&is=6511c5dc&hm=fa4158ef2917ea2f08a3501d6619c99ad183cb08ba8e75060f7d8c92013203cf&',
+      imageSrc: 'https://cdn.discordapp.com/attachments/1149190528756363337/1155196801918439534/image.png?ex=6562315c&is=654fbc5c&hm=ca0104c7cee17cb566aa5ec2cbff91fc134381a2a4c1ee2f9148367e4dbcf8db&',
       text: 'Esteban Soler',
-      topImageSrc: 'https://cdn.discordapp.com/attachments/1149190528756363337/1155196801918439534/image.png?ex=6513175c&is=6511c5dc&hm=fa4158ef2917ea2f08a3501d6619c99ad183cb08ba8e75060f7d8c92013203cf&',
-      topText: 'Esteban Soler',
-      bottomText: 'buenas tardes soy Esteban soler, tu nuevo tutor',
-      message: '',
-
-
-      topImageSrc1: 'https://cdn.discordapp.com/attachments/1149190528756363337/1155199425409458279/585e4beacb11b227491c3399.png?ex=651319cd&is=6511c84d&hm=d211539df81f10c1f84f7f6e3c14123bbf16afd41cfaf19d8ea32575c5cccced&',
-      topText1: 'Juan Perez',
-      bottomText1: 'Buenas Tardes Soy juan Perez. Es un gusto conocerlo',
-
-      topImageSrc2: 'https://cdn.discordapp.com/attachments/1149190528756363337/1155196801918439534/image.png?ex=6513175c&is=6511c5dc&hm=fa4158ef2917ea2f08a3501d6619c99ad183cb08ba8e75060f7d8c92013203cf&',
-      topText2: 'Esteban Soler',
-      bottomText2: 'El gusto es mio, quisiera saber cual es tu plataforma de preferencia para las clases',
-
-      topImageSrc3: 'https://cdn.discordapp.com/attachments/1149190528756363337/1155199425409458279/585e4beacb11b227491c3399.png?ex=651319cd&is=6511c84d&hm=d211539df81f10c1f84f7f6e3c14123bbf16afd41cfaf19d8ea32575c5cccced&',
-      topText3: 'Juan Perez',
-      bottomText3: 'Le parece bien por Zoom?',
-
-      topImageSrc4: 'https://cdn.discordapp.com/attachments/1149190528756363337/1155196801918439534/image.png?ex=6513175c&is=6511c5dc&hm=fa4158ef2917ea2f08a3501d6619c99ad183cb08ba8e75060f7d8c92013203cf&',
-      topText4: 'Esteban soler',
-      bottomText4: 'Nos vemos en la clase',
+      messages: [],
+      newMessage: ''
     };
   },
   methods: {
-    enviarMensaje() {
-      console.log('Mensaje enviado:', this.message);
+    sendMessage() {
+      if (this.newMessage.trim() !== '') {
+        const timestamp = new Date().toLocaleString();
+        const message = {
+          text: this.newMessage,
+          sender: 'Juan Perez',
+          timestamp: timestamp
+        };
+
+
+        this.messages.push(message);
+        this.newMessage = '';
+        this.scrollToBottom();
+      }
+    },
+    scrollToBottom() {
+      this.$refs.chatMessages.scrollTop = this.$refs.chatMessages.scrollHeight;
     },
   },
+  created() {
+  }
 };
+
+
 </script>
+
 
 <style scoped>
 .two-column-form {
@@ -120,6 +99,7 @@ export default {
 
 .image-text {
   margin-top: 10px;
+  margin-left:13px;
 }
 
 .right-column {

@@ -109,29 +109,65 @@
     {
       "id": 1,
       "studentId": 1,
-      "tutorId": 1,
-      "type": "Practice 1",
-      "date": "2023-10-26",
-      "score": "12/20",
-      "status": "GRADED"
+      "tutorId": 2,
+      "type": "DD 1",
+      "date": "2023-11-17T00:00:00",
+      "scoreValue": "15/20",
+      "status": "NOTSUBMITTED"
     },
     {
       "id": 2,
       "studentId": 1,
-      "tutorId": 1,
-      "type": "Exam 1",
-      "date": "2023-10-25",
-      "score": "0/20",
-      "status": "SUBMITTED"
+      "tutorId": 2,
+      "type": "Examen 1",
+      "date": "2023-11-14T00:00:00",
+      "scoreValue": "15/20",
+      "status": "SUBMMITED"
     },
     {
       "id": 3,
       "studentId": 1,
+      "tutorId": 2,
+      "type": "EXAMEN 2",
+      "date": "2023-11-12T00:00:00",
+      "scoreValue": "13/20",
+      "status": "NOTSUBMMITED"
+    },
+    {
+      "id": 4,
+      "studentId": 1,
       "tutorId": 1,
-      "type": "DD 1",
-      "date": "2023-10-23",
-      "score": "",
+      "type": "Practice 1",
+      "date": "2023-11-14T00:00:00",
+      "scoreValue": "12/20",
+      "status": "GRADED"
+    },
+    {
+      "id": 5,
+      "studentId": 2,
+      "tutorId": 2,
+      "type": "Practice 3",
+      "date": "2023-11-14T00:00:00",
+      "scoreValue": "12/20",
+      "status": "SUBMITTED"
+    },
+    {
+      "id": 6,
+      "studentId": 3,
+      "tutorId": 1,
+      "type": "Practice 4",
+      "date": "2023-11-14T00:00:00",
+      "scoreValue": "",
       "status": "NOTSUBMITTED"
+    },
+    {
+      "id": 7,
+      "studentId": 4,
+      "tutorId": 2,
+      "type": "Practice 5",
+      "date": "2013-11-14T00:00:00",
+      "scoreValue": "0/20",
+      "status": "SUBMITTED"
     }
   ],
   "reviews": [
