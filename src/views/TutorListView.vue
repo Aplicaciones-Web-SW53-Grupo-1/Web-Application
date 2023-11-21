@@ -33,7 +33,7 @@ export default {
     },
     async fetchReviewsFromAPI() {
       try {
-        const response = await axios.get("http://localhost:3000/reviews");
+        const response = await axios.get("http://localhost:5255/Review");
         this.reviews = response.data;
       } catch (error) {
         console.error("Error al obtener calificaciones:", error);

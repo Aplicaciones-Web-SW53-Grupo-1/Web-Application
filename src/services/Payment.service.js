@@ -6,13 +6,13 @@ const http = axios.create({
 
 class PaymentService {
     getByParam(param){
-        return http.get("payments?" + param);
+        return http.get("Payment?" + param);
     }
     getById(id) {
         return http.get("Payment/" + id);
     }
     getAll() {
-        return http.get('payments');
+        return http.get('Payment');
     }
 
     create(data) {
