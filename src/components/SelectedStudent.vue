@@ -54,17 +54,17 @@
           <h2>{{student.age}}</h2>
         </div>
         <div class="button">
-          <pv-button severity="secondary"><h3>Chat</h3></pv-button>
+          <pv-button severity="secondary"><h3>{{ $t('Chat') }}</h3></pv-button>
         </div>
       </div>
     </template>
   </pv-card>
   <div class="table">
     <pv-table :value="grades" tableStyle="min-width: 50rem">
-      <pv-column field="type" header="Test"></pv-column>
-      <pv-column field="date" header="Date"></pv-column>
-      <pv-column field="status" header="Status"></pv-column>
-      <pv-column header="Score">
+      <pv-column field="type" :header="$t('Test')"></pv-column>
+      <pv-column field="date" :header="$t('Date')"></pv-column>
+      <pv-column field="status" :header="$t('Status')"></pv-column>
+      <pv-column :header="$t('Score')">
         <template #body="slotProps">
           <p v-if="slotProps.data.score === '' ">
             -/20

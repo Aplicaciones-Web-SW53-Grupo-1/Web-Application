@@ -10,20 +10,20 @@
             <div class="student-info">
               <!-- Nombre y Apellido -->
               <div class="student-name">{{ student.name }} {{ student.lastname }}</div>
-              <div class="student-birthday">Birthday: {{ student.birthday }}</div>
+              <div class="student-birthday">{{ $t('Birthday') }}: {{ student.birthday }}</div>
               <!-- Contenedor para la foto y los detalles -->
               <div class="student-details">
                 <div class="student-photo">
                   <img :src="student.image" alt="Foto del estudiante" />
                 </div>
                 <!-- Especialidad -->
-                <div class="student-cellphone">Phone: +51 {{ student.cellphone }}</div>
+                <div class="student-cellphone">{{ $t('Phone: +51 ') }} {{ student.cellphone }}</div>
               </div>
             </div>
           </template>
           <template #footer>
             <!-- Botón "See More" -->
-            <Button class="p-button-text" @click="verMas(student)">See More</Button>
+            <Button class="p-button-text" @click="verMas(student)">{{ $t('See more') }}</Button>
           </template>
         </Card>
       </div>
