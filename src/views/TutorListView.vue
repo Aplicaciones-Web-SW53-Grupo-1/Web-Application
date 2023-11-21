@@ -25,7 +25,7 @@ export default {
   methods: {
     async fetchTutoresFromAPI() {
       try {
-        const response = await axios.get("http://localhost:3000/tutores");
+        const response = await axios.get("http://localhost:5255/api/Tutor");
         this.tutores = response.data;
       } catch (error) {
         console.error("Error al obtener tutores:", error);

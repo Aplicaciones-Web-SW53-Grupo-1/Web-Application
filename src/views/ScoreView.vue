@@ -33,7 +33,7 @@ export default {
       const studentId = this.$route.params.id;
 
 
-      axios.get("http://localhost:3000/scores").then((response) => {
+      axios.get("http://localhost:5255/api/Score").then((response) => {
         this.scores = response.data;
       });
 
