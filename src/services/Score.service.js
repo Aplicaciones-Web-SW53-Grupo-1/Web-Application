@@ -6,7 +6,7 @@ const http = axios.create({
 
 class ScoreService {
     getById(id) {
-        return http.get("Score/" + id);
+        return http.get("Score/scores/student/" + id);
     }
     getAll() {
         return http.get('Score');
