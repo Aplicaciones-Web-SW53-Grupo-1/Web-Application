@@ -16,7 +16,11 @@ import Rating from "primevue/rating";
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 
+
+
+
 const app = createApp(App);
+app.use(i18n);
 app.use(PrimeVue);
 app.use(router);
 

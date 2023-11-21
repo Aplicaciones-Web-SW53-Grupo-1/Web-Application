@@ -1,19 +1,19 @@
 import axios from "axios";
 
 const http = axios.create({
-    baseURL: "http://localhost:3000/",
+    baseURL: "http://localhost:5255/api/",
 })
 
 class StudentService {
     getById(id) {
-        return http.get("students/" + id);
+        return http.get("Student/" + id);
     }
     getAll() {
-        return http.get('students');
+        return http.get('Student');
     }
 
     create(data) {
-        return http.post("students", data);
+        return http.post("Student", data);
     }
 }
 

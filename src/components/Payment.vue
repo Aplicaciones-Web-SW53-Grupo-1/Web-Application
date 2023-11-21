@@ -12,21 +12,41 @@ export default {
       cvv: 0,
       paymentService: null,
       creditCard:[],
+      tried: false,
+      studentId: 2
     }
   },
   methods:{
     confirm(){
       this.paymentService = new PaymentService();
-      this.paymentService.getByParam('?cardNumber=' + this.cardNumber).then((response)=>{
-        this.creditCard = response.data
-        for (let i in this.creditCard){
-          if (this.creditCard[i].owner === this.owner && this.creditCard[i].cardNumber === this.cardNumber && this.creditCard[i].expirationDate === this.expirationDate && this.creditCard[i].cvv === Number(this.cvv)){
-            /*Bank process*/
-            router.push('/selected')
-          }
+      this.paymentService.getById(this.studentId).then((response)=>{
+        this.creditCard = response.data;
+        console.log(this.creditCard);
+        if (this.creditCard.owner === this.owner && this.creditCard.cardNumber === this.cardNumber && this.creditCard.expirationDate === this.expirationDate && this.creditCard.cvv === Number(this.cvv)){
+          /*Bank process*/
+          router.push('/selected')
         }
-
+        else this.tried = true;
+      }).catch((error) => {
+        this.postPayment();
       })
+    },
+
+    postPayment(){
+      let payment = new FormData();
+      payment.append('cardNumber', this.cardNumber);
+      payment.append('expirationDate', this.expirationDate);
+      payment.append('owner', this.owner);
+      payment.append('cvv', this.cvv);
+      payment.append('studentId', this.studentId );
+      const data = {
+        cardNumber: this.cardNumber,
+        expirationDate: this.expirationDate,
+        owner: this.owner,
+        cvv: this.cvv,
+        studentId: this.studentId
+      };
+      this.paymentService.create(data).then((response)=>{console.log(response.data);})
     }
   }
 }
